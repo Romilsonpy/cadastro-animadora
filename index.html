@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Top Agenda Festa">
     <meta name="mobile-web-app-capable" content="yes">
+    <title>Top Agenda Festa - Sistema de Gestão de Eventos</title>
     <link rel="manifest" href="data:application/manifest+json,{
         \"name\": \"Top Agenda Festa - Sistema para Fornecedores de Eventos\",
         \"short_name\": \"Top Agenda Festa\",
@@ -17,14 +18,27 @@
         \"theme_color\": \"#FF69B4\",
         \"background_color\": \"#FFE4E1\",
         \"orientation\": \"portrait-primary\",
-        \"icons\": [{
-            \"src\": \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF69B4'/%3E%3Cstop offset='100%25' stop-color='%239B59B6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-size='45' text-anchor='middle' fill='white' font-family='Arial'%3E🎉%3C/text%3E%3C/svg%3E\",
-            \"sizes\": \"any\",
-            \"type\": \"image/svg+xml\",
-            \"purpose\": \"any maskable\"
-        }]
+        \"icons\": [
+            {
+                \"src\": \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF69B4'/%3E%3Cstop offset='100%25' stop-color='%239B59B6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-size='45' text-anchor='middle' fill='white' font-family='Arial'%3E🎉%3C/text%3E%3C/svg%3E\",
+                \"sizes\": \"any\",
+                \"type\": \"image/svg+xml\",
+                \"purpose\": \"any maskable\"
+            },
+            {
+                \"src\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUbSURBVHgB7Z1LbFRVGMd/5947c6dT22kwFEp5CQgqBEGjYsKLxMSNURMXRgITN64k7F0ZF0pciBtM3LgwIQEjdYMKNgENvqKmPkCjVShJqZ3pzLw8vpl7T2fuA3fSe+acOZP+P8mU0s6d830n38l/zj3nPwAURVEmQFVnAUVSFGXclAUkRVGUcUBZlCQpGU+KokiKoiiKoiiKoihKgMkOrhITBz55vRAd3ZRg+buPU7Ux3evhksFnt4YD04yRwTtUGRkPmBxmgFvyvLVxWtMSvObrxYtM6Q76uYefHmUCUcAwMaFPAOaE6Fhi2ThB8vDtpy+CpFp97bXeb0bwTivFJf09JJBw8M+LSN3nWxmne1FqV/xNZ1A1EJ/RAu0cUKgDpLi9aKZ2Iu6oFhA9S9SsgjXMnN27GteHS4EfOdyiPIgQ8Edy7jkhTHt21Bic7ia4Sow3qonXh5mIO9YpCYP2gQ7NpB7WJ9Kv+U2+oA00CwbXJ+c5vyWr8jNMdKphbI/KjN4gSfVHrfmBPlK/qe9L3hsHddQhyMDf/uOGfFPyVdIY2yFKhxW2iFC/W7O0T7iCHyf2qgN9+yfIMi+ZpQaD6wCTHsqkCLe2HqSz3ujsV3Nsp0k0EA6yRlZoCTMTtrUwE0tmYgUhy6AgO9hL8kAzMYAkvBZCpkgyUYhXZ2jZKLFB7APdENIsrOlgW02uBT/HYidHrPdhMxYiFmJdiNlSxPIhFnVViC+UJM6FWEdoELEuRDDaqkIsLhWyEYXYYqHWRxXicaEQ60JkIwrBhiCQy0K8LBTKsSC0UChiIqEghYQ2pFCEhELBVAqF8oY2pFDEhEIBQyhUzARCISuFQhUiZEKhhFMowr5kR6EAIhSKqEKoVgUQQaxqoQqqVQFFGKtSqOJqVYjCaqGiKhQoYqFQVQpVUK0KEGJjK1RZtSqAWJhKka2qVAQ4UYlSZatUFAmOUoQoL1WiqJCUJkR9r2qFqC+UJsRoq1oh6itFCTFerUqhBgqRq0LRQmSqUJQQGatCVUJkmUJNRIhMU4gqhJhFmYkQmabQVITINIUqQkwVYipCxDRFJipiB1MVMXMzpjqLmbgYcyI2QlWBqUJkYXMV2QhTiGtMXYhsTL+ILQzxQvSH+EYICVkIhVgWYnszpioQ8UI2Qkz8IhbFWAiFWBZibTNWJwvxRYjpoiBExCvYVyFWhRjbjHVDiIhXaIUQI74IYVoI8Y8QzYQQf4TYEEJ8EmJbCNGsECJCCNNCiAAhTAsxLoT4IMSUEGLox0KIQSGGhfjAUBixCjEsxLwQo0IMC/FBCNFkUhWitSnKRqg9U5SN0Aam6AHEEEI0+wQYMwXUfYrywYGWKcZSNE3RA4ohhGj2CTBmCjAUmEmKWSFmhBgVYkCIQSGGhRgSYkAIpmmKAU2pGMA0xfp/jhlNUwygispKUwygKUpTlKZoiqJpikFRGsUou88Uo2iKUYyiaYpRjIYphtE0xTAMTTOKYRimYhRNUwyjaYphGE1TDKJpiqFommIQmqaYhKJpimEoimYYikJpmmEkiqYZRqJommEoiqYZhqJommEsCqUphqMommI4iqYohqMomqIYikJphqEwNE0xFEXTFENRNMUwFEXTDMPQNMUwGJqmGAxCUwzDWJlmGIyiKQajKIpiGEpTFENRFMUwDvZrbEwMQimKolCKoiijwD8NSAtDm4/UcQAAAABJRU5ErkJggg==\",
+                \"sizes\": \"192x192\",
+                \"type\": \"image/png\",
+                \"purpose\": \"any maskable\"
+            },
+            {
+                \"src\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAdOSURBVHgB7d1PjFtVHMYx7353OjNtO9Np6l+EQCIgogHjghGXhCUKmzUu7KxwwcRgwIUXN4iLBt1wwcQVJDUhG268mLAguKDAogVEgigUSWc6nfG9mJ858+YBPejMs28+5/vRdDJt5s385pvvT9/3OwEAAAAAAAAAAAAAAAAAAAAAAABTwfDhw4fL7v2d7s2bN2ORRHYjMzMzpGVlZSaSSCoSiwQhpFgkhBhI7zh58qR2c3Dfffft/fTTT9uiSJkyf9nLy8uN27dvzxRJuiKxSCHFIgHKWpzjx4+PHzp0KD18+HDSsmXLlrrvtSRJHNvfFz+UbN++/VK73ZZmpJRi7dq1V+V3mUajMTczM6NtQ9Jotc/du3dH2a5du9pf/vq1lH6T5eZ9e55cEIT0hGGIAkGG+7Isoz//7/9xcXEx/fbbb8fCKLJFkrSuTZQeFy9ejLOzs6NnnnlmTpaO7i+kx5enT58++fXXX5+ZnZ1diUUSWZTRByKJ0CwWSTsMQ0EQYjAY5Df/35lM+5K7d+9mP/zww4Usy7xYJI3YSSKJhAqCkEuXLiVTUlQsEmgIgpByubxw6NChmQ0bNqRCkUQSRaw0kUQSBbUgCEkkUfB+QaQoiyRmteh3ESuJJGbA7+BxkUhbnsLcClWLn6LdbtNvPntnLJFIqMVygs3FIlmJxFz+T8YikUYCFUlUJJJobClOnjzZ+bUI79+/v/3e+++PxSKJ7G2RKCYSiSaKf/fu3RtXKhUymwQMr9NppJ9f+aZaLBbnG40Go+3m5ub67XZ7vNFopLFIRiORPABK+HQmwTt37qSff/7FnWq1mkgk4UQiYeAbKZJIJKyUi0UyEokCZR4JRCKxgmPpI/EgEomVBGIkkgASiXkSiYVEYo5E4kAisYBEYp5EYkAicUAicUQicaKR+BOJtR+90UgsEkgsEkisGJxH4kAicUYisSMWiQUSiSESiSESiWESiQESiSECiSESiWESiSWln0cT+qPRaPz06dMTExITJV5iXu/58+fP3r59eyoUcSxPJBLNqg8nEy+aN2/ejKZ8kUiCuAo+W7dunT579uws1YPJ+ETCk+iOJhoJTyYSiSMsb/bv39++8sVXa5FIovl4IpFIsIJFItFwPJFoOF6aZfr+++9nqVv/TTxYJBLNxhOJhPGKRaLBqCUSzeMViyQaO4/Em/IiCfHaa6+ln149+1Eo4mlVeSKRaLhXJBGNRnHj+PHjSZwBk2iWnjx58sT169dv5n9FEEgkkVgmFks0GuGZEydOxGeEcbVIpJ7u7e+//2/7iy++WJqfn+9LJIJEopF4uUikUZ8+fbrDaN1YJEEUUSqV4s8//zxrNBp9kUhUVKlU4uPHj6fXr1/vdTqdvkSSr9nZ2ej48eP9s2fPLjYajQGRSCeVSqU4z7n4jTfeGPj3xtskEhWDwSD9/LPzs82nnuqHYTg/PT0tv9rpdFrzeJxO5/zZs2dXeZ5LgBDQPOk0IvXHkUjUJQq2Oj298b2VlZWNlUpFJq5U/U7n2bNnVwkhW7ZsqSz+9XBsbm6uFUsjPJtWq+V0Op3B8+fPxwKxSCQSjUQjxT04c+bMnU6nYxKHRGKRRALlzJkzP46PjzcmJiZSeR+JRAJJ4GjRJ598MiEEmQ0E8/PzTz7zzDN9mXhMkUg0VfE1Gg3+/PPP+/Pz84NQJJJI/Pjjj/HVq1d7jUYjEIm4LZJI4unTp3JEGhGJXyKRxAcffLDCEQk8Pz8fXb58Ob13715fJJIY+uvRo0djgUikIMyeGB8fH5nLJgJR+LxIorHwbrFYdP/mYYyPj8dfXfzqfigSmaP88MMP8dWrV/uNRiMWiS9SSKJgvzD6/f75s2fPLtE8DRKJpZk/+ssvv2Rl5n5UJBKNRHvNzc31+/3+eblqIBApJPUb4/hkM2IQiSQSjUQDeeedd1aYH4MY7yQS2Zz48ssvZ6W+KDqJhv0iUFmsNHr69OnY0BeJRAKBRoFEkmm8+uqrKwxPQoIJJPJbJ06cWJHJpd8YiSSS9UooQ0ePHk1p3AeRSCYJZiI6fPjwAqb1HZFIIvFjnhZJJJFIWwQSiQSSSCKRRBLLTyLTp4RITLBp06Y1q4UQkihMp3L27NmUsSlFeyE2iYJC2apVq9bMNMSsiYIQ26ZZaU9sSggRs0HMImMmlERu+QjTAGuM+D6VtTKNxLZaa/zc1F8Gg0GcRqPz+/q1wWAQ2zfv/fv3Lz/66KMrMR9sbhqJB9Rf/utff/ih19uVpulKFonmRlRI8dCSJkcnbXc20VgDyB+yZFkWi0QSCUJ3YpFoktEIRPZLIo4kYxGPfH9+eG/v3r2r+vcSQQgxPz8/uLG9ZeF4yM3NLfZ6vcRwL+5IJFYc/xyPpVwux+fPn+8fPXp0nXlE7pP0+PTp0ydv3LixMv0sVosEYsU1S/Pz8+2m+MZkqY0bN3bN/Y6IRaKpCofzOCQSfeTFF1/csG3bti4pJj7DpJCEonJ+fv4ycyckEklkf41Go7EwHGmWfPzxx3e//vrrlOiOROLIYR5JJJzq/4p39+3b13rttddWKpWIpJBEEoFIHgQhqSefffZZf/LJJzcFQWi2I5FEEsqEXyQSnUQ+BRyJRAVpJv9qPB6P5+bm+k8++WRiJZBEEolEfZX/zZ07dzr379+PEokE+/btS9977711JJAkEgkkThp/P/744yjP/mbiihhjlW6dmwYSjbVp02acjUajefDgwcknn3wyE30/FkmCEpLt2bNn+zfffDPKd4rG2Q8AAAAAAAAAAAAAAIDb/gdY13sKYvNY4AAAAABJRU5ErkJggg==\",
+                \"sizes\": \"512x512\",
+                \"type\": \"image/png\",
+                \"purpose\": \"any maskable\"
+            }
+        ]
     }">
-    <title>Top Agenda Festa - Sistema de Gestão de Eventos</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -47,7 +61,7 @@
             padding: 20px;
         }
 
-        /* Banner de instalação */
+        /* Banner de instalação do App - Automático */
         .install-prompt {
             position: fixed;
             bottom: 20px;
@@ -70,9 +84,8 @@
         .install-text { color: white; font-size: 14px; font-weight: bold; flex: 1; }
         .install-text strong { display: block; font-size: 16px; margin-bottom: 5px; }
         .install-btn { background: #FFD700; color: #9B59B6; border: none; padding: 10px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; }
-        .close-install { background: rgba(255,255,255,0.3); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+        .close-install { background: rgba(255,255,255,0.3); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; }
 
-        /* Telas de Overlay */
         .first-access-overlay, .login-overlay, .license-overlay {
             position: fixed;
             top: 0;
@@ -200,14 +213,6 @@
         .content.active { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Tutorial / Ajuda */
-        .tutorial-step { background: #FFF9F9; border-radius: 20px; padding: 20px; margin-bottom: 20px; border-left: 5px solid var(--primary-pink); }
-        .tutorial-step h3 { color: var(--primary-pink); margin-bottom: 10px; font-size: 18px; }
-        .tutorial-step p { color: #555; line-height: 1.6; margin-bottom: 10px; }
-        .tutorial-step ul { margin-left: 20px; color: #555; }
-        .tutorial-step li { margin: 8px 0; }
-        .tutorial-icon { font-size: 24px; margin-right: 10px; vertical-align: middle; }
-
         .form-group { margin-bottom: 20px; }
         .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-purple); }
@@ -240,9 +245,6 @@
         .status-concluido { background: #95A5A6; color: white; }
         .status-cancelado { background: #e74c3c; color: white; }
 
-        .servicos-cadastrados { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
-        .servico-item { background: #FFE4E1; padding: 5px 12px; border-radius: 20px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
-
         .contrato-paper { background: white; max-width: 210mm; margin: 0 auto; padding: 25px; border: 2px dashed var(--primary-pink); border-radius: 20px; }
         .payment-note { background: #FFF9F9; border-left: 4px solid var(--primary-yellow); padding: 12px; margin: 20px 0; border-radius: 15px; }
         .clausula-especifica { background: #F0F8FF; border-left: 4px solid #FF69B4; padding: 12px; margin: 10px 0; border-radius: 10px; }
@@ -264,17 +266,6 @@
 
         .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; }
         .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; background: rgba(255,255,255,0.8); border-radius: 30px; margin-top: 10px; }
-        .maintenance-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .maintenance-card { background: #FFF9F9; border-radius: 20px; padding: 20px; text-align: center; border: 2px solid var(--primary-yellow); }
-        .file-input { margin-bottom: 15px; padding: 10px; border: 2px dashed #FF69B4; border-radius: 20px; }
-
-        .servicos-container { border: 2px solid #FFE4E1; border-radius: 20px; padding: 15px; background: #FFF9F9; }
-        .servicos-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
-        .servicos-lista { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-        .servico-tag { background: linear-gradient(135deg, #FF69B4, #9B59B6); color: white; padding: 5px 15px; border-radius: 50px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
-        .remove-servico { cursor: pointer; background: rgba(255,255,255,0.3); width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .remove-servico:hover { background: #e74c3c; }
-        .btn-add-servico { background: linear-gradient(135deg, #2ECC71, #27AE60); color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; }
 
         @media (max-width: 768px) {
             .menu-buttons { grid-template-columns: repeat(2, 1fr); }
@@ -289,14 +280,12 @@
     </style>
 </head>
 <body>
-    <!-- Banner de instalação -->
     <div id="installBanner" class="install-prompt">
-        <div class="install-text"><strong>📱 Instale o App!</strong><span>Use o sistema como aplicativo - mais rápido!</span></div>
+        <div class="install-text"><strong>📱 Instale o App!</strong><span>Adicione à tela inicial e use como aplicativo!</span></div>
         <button id="installAppBtn" class="install-btn">📲 Instalar Agora</button>
         <button id="closeInstallBtn" class="close-install">✕</button>
     </div>
 
-    <!-- Telas de Acesso -->
     <div id="firstAccessOverlay" class="first-access-overlay">
         <div class="first-access-box">
             <div class="logo-icon">🎉🎈</div>
@@ -344,7 +333,6 @@
         </div>
     </div>
 
-    <!-- Conteúdo Principal -->
     <div id="mainContent" class="main-content">
         <div class="container">
             <div class="header">
@@ -375,9 +363,7 @@
                 <button class="btn btn-secondary" onclick="carregarDadosExemplo()">🎈 Carregar Exemplo</button>
             </div></div>
 
-            <!-- Perfil -->
-            <div id="perfil" class="content">
-                <h2>⭐ Meu Perfil Profissional ⭐</h2>
+            <div id="perfil" class="content"><h2>⭐ Meu Perfil Profissional ⭐</h2>
                 <form id="formPerfil">
                     <div class="form-row"><div class="form-group"><label>Nome Artístico *</label><input type="text" id="nomeArtistico" required></div><div class="form-group"><label>WhatsApp *</label><input type="text" id="whatsappPerfil" required></div></div>
                     <div class="form-row"><div class="form-group"><label>Email *</label><input type="email" id="emailPerfil" required></div><div class="form-group"><label>Cidade *</label><input type="text" id="cidadePerfil" required></div></div>
@@ -389,7 +375,6 @@
                 </form>
             </div>
 
-            <!-- Cadastro de Cliente -->
             <div id="cadastroCliente" class="content"><h2>📝 Cadastro de Cliente</h2>
                 <form id="formCliente"><div class="form-row"><div class="form-group"><label>Nome Completo *</label><input type="text" id="nomeCliente" required></div><div class="form-group"><label>CPF/CNPJ *</label><input type="text" id="cpfCliente" required></div></div>
                 <div class="form-row"><div class="form-group"><label>Telefone *</label><input type="text" id="telefoneCliente" required></div><div class="form-group"><label>Email *</label><input type="email" id="emailCliente" required></div></div>
@@ -398,13 +383,12 @@
                 <button type="submit" class="btn btn-primary">✅ Cadastrar Cliente</button></form>
             </div>
 
-            <!-- Cadastro de Evento -->
-            <div id="cadastroEvento" class="content">
-                <h2>🎯 Cadastro de Evento</h2>
+            <div id="cadastroEvento" class="content"><h2>🎯 Cadastro de Evento</h2>
                 <form id="formEvento">
                     <div class="form-group"><label>Cliente *</label><select id="clienteEvento" required><option value="">Selecione</option></select></div>
                     <div class="form-group"><label>Nome da Festa *</label><input type="text" id="nomeEvento" required></div>
-                    <div class="form-group"><label>Tipo de Serviço *</label><select id="tipoServico" required><option value="">Selecione o tipo de serviço</option></select></div>
+                    <div class="form-group"><label>Contratado / Fornecedor *</label><input type="text" id="fornecedorEvento" required placeholder="Nome completo do fornecedor contratado"></div>
+                    <div class="form-group"><label>Tipo de Serviço *</label><select id="tipoServico" required><option value="">Selecione</option></select></div>
                     <div class="form-group"><label>Serviços Adicionais</label>
                         <div class="servicos-container"><div class="servicos-header"><select id="selectNovoServico"><option value="">Selecione um serviço</option></select><button type="button" class="btn-add-servico" onclick="adicionarServico()">+ Adicionar Serviço</button></div><div id="listaServicos" class="servicos-lista"></div><input type="hidden" id="servicosContratados"></div>
                     </div>
@@ -419,165 +403,15 @@
                 </form>
             </div>
 
-            <!-- Gerenciamento de Serviços -->
-            <div id="servicos" class="content">
-                <h2>🛠️ Meus Serviços</h2>
-                <div class="form-group">
-                    <label>Adicionar Novo Serviço</label>
-                    <div class="form-row">
-                        <input type="text" id="novoServicoNome" class="form-group" placeholder="Ex: Garçons, Fritadeira, DJ, Fotógrafo, Decoração, Buffet...">
-                        <button type="button" class="btn btn-success" onclick="adicionarNovoServico()" style="margin-top: 0;">+ Adicionar Serviço</button>
-                    </div>
+            <div id="servicos" class="content"><h2>🛠️ Meus Serviços</h2>
+                <div class="form-group"><label>Adicionar Novo Serviço</label>
+                    <div class="form-row"><input type="text" id="novoServicoNome" placeholder="Ex: Garçons, DJ, Fotógrafo..."><button type="button" class="btn btn-success" onclick="adicionarNovoServico()">+ Adicionar</button></div>
                 </div>
                 <h3>📋 Serviços Cadastrados</h3>
                 <div id="listaServicosCadastrados" class="servicos-cadastrados"></div>
-                <p style="margin-top:15px; font-size:12px; color:#888;">💡 Dica: Os serviços cadastrados aparecerão na lista de seleção ao criar um evento.</p>
             </div>
 
-            <!-- Tutorial / Ajuda -->
-            <div id="ajuda" class="content">
-                <h2>📖 Passo a Passo - Como Usar o Sistema</h2>
-                
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">1️⃣</span> Primeiro Acesso - Criar Conta</h3>
-                    <p>Ao abrir o sistema pela primeira vez, você precisa criar seu usuário e senha:</p>
-                    <ul>
-                        <li>Digite um <strong>nome de usuário</strong> (ex: seu nome ou email)</li>
-                        <li>Crie uma <strong>senha</strong> com no mínimo 3 caracteres</li>
-                        <li>Confirme a senha e clique em <strong>"Criar Acesso e Continuar"</strong></li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">2️⃣</span> Configurar Meu Perfil</h3>
-                    <p>Após o primeiro acesso, você será direcionado para a página de perfil:</p>
-                    <ul>
-                        <li>Preencha seu <strong>Nome Artístico</strong> (como você quer ser chamado)</li>
-                        <li>Informe seu <strong>WhatsApp</strong> e <strong>Email</strong> de contato</li>
-                        <li>Adicione sua <strong>Cidade</strong> e <strong>Estado</strong></li>
-                        <li>Opcional: faça o <strong>upload da sua logo</strong> (formato JPEG)</li>
-                        <li>Clique em <strong>"Salvar Perfil"</strong> para concluir</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">3️⃣</span> Cadastrar Clientes</h3>
-                    <ul>
-                        <li>Clique no botão <strong>"📝 Novo Cliente"</strong> no menu</li>
-                        <li>Preencha os dados: Nome, CPF/CNPJ, Telefone, Email, Endereço, Cidade e Estado</li>
-                        <li>Clique em <strong>"Cadastrar Cliente"</strong></li>
-                        <li>Pronto! O cliente aparecerá na lista de clientes</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">4️⃣</span> Cadastrar Eventos</h3>
-                    <ul>
-                        <li>Clique em <strong>"🎯 Novo Evento"</strong> no menu</li>
-                        <li>Selecione o <strong>cliente</strong> da lista</li>
-                        <li>Digite o <strong>nome da festa</strong> (ex: "Aniversário da Maria")</li>
-                        <li>Selecione o <strong>Tipo de Serviço</strong> (Animaçao, DJ, Fotógrafo, etc)</li>
-                        <li>Adicione <strong>serviços adicionais</strong> (opcional)</li>
-                        <li>Preencha <strong>endereço, data, hora, duração e valor</strong></li>
-                        <li>Clique em <strong>"Cadastrar Evento"</strong></li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">5️⃣</span> Visualizar Agenda</h3>
-                    <ul>
-                        <li>A <strong>página inicial</strong> (Dashboard) mostra automaticamente os eventos dos próximos 3 meses</li>
-                        <li>Os eventos aparecem em cards coloridos com: nome, cliente, data, horário e local</li>
-                        <li>Você pode <strong>editar</strong> ou <strong>excluir</strong> eventos diretamente pelos botões nos cards</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">6️⃣</span> Listar Clientes e Eventos</h3>
-                    <ul>
-                        <li>Clique em <strong>"👥 Listar Clientes"</strong> para ver todos os clientes cadastrados</li>
-                        <li>Clique em <strong>"🎪 Listar Eventos"</strong> para ver todos os eventos</li>
-                        <li>Na lista de eventos, você pode:
-                            <ul>
-                                <li>🔍 <strong>Ver</strong> detalhes do evento</li>
-                                <li>✏️ <strong>Editar</strong> o evento</li>
-                                <li>📌 <strong>Alterar status</strong> (Agendado, Confirmado, Em andamento, Concluído, Cancelado)</li>
-                                <li>🗑️ <strong>Excluir</strong> o evento</li>
-                                <li>🗺️ <strong>GPS</strong> - abre Google Maps e Waze com o endereço do evento</li>
-                            </ul>
-                        </li>
-                        <li>Use o <strong>filtro por status</strong> para organizar a visualização</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">7️⃣</span> Gerar Contrato</h3>
-                    <ul>
-                        <li>Clique em <strong>"📄 Gerar Contrato"</strong> no menu</li>
-                        <li>Selecione o evento desejado</li>
-                        <li>O contrato será gerado automaticamente com:
-                            <ul>
-                                <li>Sua logo e dados do seu perfil</li>
-                                <li>Dados do cliente e do evento</li>
-                                <li>Cláusulas específicas conforme o tipo de serviço escolhido</li>
-                                <li>Valores e forma de pagamento (50% na assinatura + 50% na chegada)</li>
-                            </ul>
-                        </li>
-                        <li>Você pode <strong>visualizar, imprimir ou baixar como JPEG</strong></li>
-                        <li>O contrato em JPEG é ideal para enviar pelo WhatsApp</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">8️⃣</span> Gerenciar Serviços</h3>
-                    <ul>
-                        <li>Clique em <strong>"🛠️ Meus Serviços"</strong> no menu</li>
-                        <li>Você pode <strong>adicionar novos serviços</strong> (ex: Garçons, Fritadeira, DJ, Fotógrafo, Decoração)</li>
-                        <li>Os serviços cadastrados aparecerão automaticamente na lista de "Tipo de Serviço" ao criar um evento</li>
-                        <li>Remova serviços não utilizados clicando no ✕ ao lado do serviço</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">9️⃣</span> Estatísticas</h3>
-                    <ul>
-                        <li>Clique em <strong>"📊 Estatísticas"</strong> para ver:</li>
-                        <li>Total de <strong>clientes cadastrados</strong></li>
-                        <li>Total de <strong>eventos realizados</strong></li>
-                        <li><strong>Faturamento total</strong> de todos os eventos</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">🔟</span> Manutenção e Backup</h3>
-                    <ul>
-                        <li>Clique em <strong>"🔧 Manutenção"</strong> no menu</li>
-                        <li><strong>Limpar Dados:</strong> remove todos os clientes e eventos (cuidado!)</li>
-                        <li><strong>Baixar Backup:</strong> salva todos os dados em um arquivo JSON</li>
-                        <li><strong>Restaurar Backup:</strong> carrega um backup anterior</li>
-                        <li><strong>Alterar Senha:</strong> modifica sua senha de acesso</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">📱</span> Instalar como Aplicativo</h3>
-                    <ul>
-                        <li>No celular (Android/iPhone), o navegador mostrará um banner <strong>"Instalar o App"</strong></li>
-                        <li>Clique em <strong>"Instalar Agora"</strong> para adicionar o ícone na tela inicial</li>
-                        <li>O sistema funcionará como um aplicativo nativo, mais rápido e prático</li>
-                    </ul>
-                </div>
-
-                <div class="tutorial-step">
-                    <h3><span class="tutorial-icon">💡</span> Dicas Importantes</h3>
-                    <ul>
-                        <li>Os dados são salvos automaticamente no <strong>navegador</strong> (localStorage)</li>
-                        <li>Se trocar de computador/celular, use a função <strong>Backup e Restauração</strong></li>
-                        <li>O período de teste é de <strong>7 dias</strong>. Após esse período, adquira uma licença</li>
-                        <li>Para dúvidas, clique no botão <strong>WhatsApp</strong> no canto inferior direito</li>
-                    </ul>
-                </div>
-            </div>
+            <div id="ajuda" class="content"><h2>📖 Tutorial</h2><div class="tutorial-step"><h3>1️⃣ Primeiro Acesso</h3><p>Crie seu usuário e senha.</p></div><div class="tutorial-step"><h3>2️⃣ Configure seu Perfil</h3><p>Adicione nome artístico, contato e logo.</p></div><div class="tutorial-step"><h3>3️⃣ Cadastre Clientes e Eventos</h3><p>Gerencie tudo em um só lugar!</p></div><div class="tutorial-step"><h3>4️⃣ Gere Contratos</h3><p>Contratos profissionais com seu logo e cláusulas específicas.</p></div></div>
 
             <div id="listaClientes" class="content"><h2>👥 Lista de Clientes</h2><div id="clientesList"></div></div>
             <div id="listaEventos" class="content"><h2>🎪 Lista de Eventos</h2><div class="form-group"><select id="filtroStatus" onchange="filtrarEventos()" style="max-width:200px;"><option value="todos">Todos</option><option value="Agendado">Agendado</option><option value="Confirmado">Confirmado</option><option value="Em andamento">Em andamento</option><option value="Concluído">Concluído</option><option value="Cancelado">Cancelado</option></select></div><div id="eventosList"></div></div>
@@ -590,95 +424,60 @@
 
     <a href="https://wa.me/5571982905513" class="whatsapp-btn" target="_blank">💬</a>
 
-    <!-- Modais -->
     <div id="modalEditCliente" class="modal-edit"><div class="modal-edit-content"><span class="close" onclick="fecharModalEditCliente()">&times;</span><h2>✏️ Editar Cliente</h2><form id="formEditCliente"><input type="hidden" id="editClienteId"><div class="form-row"><div class="form-group"><label>Nome</label><input type="text" id="editNomeCliente" required></div><div class="form-group"><label>CPF/CNPJ</label><input type="text" id="editCpfCliente" required></div></div><div class="form-row"><div class="form-group"><label>Telefone</label><input type="text" id="editTelefoneCliente" required></div><div class="form-group"><label>Email</label><input type="email" id="editEmailCliente" required></div></div><div class="form-group"><label>Endereço</label><input type="text" id="editEnderecoCliente" required></div><div class="form-row"><div class="form-group"><label>Cidade</label><input type="text" id="editCidadeCliente" required></div><div class="form-group"><label>Estado</label><input type="text" id="editEstadoCliente" maxlength="2" required></div></div><button type="submit" class="btn btn-primary">Salvar</button><button type="button" class="btn btn-secondary" onclick="fecharModalEditCliente()">Cancelar</button></form></div></div>
-    <div id="modalEditEvento" class="modal-edit"><div class="modal-edit-content"><span class="close" onclick="fecharModalEditEvento()">&times;</span><h2>✏️ Editar Evento</h2><form id="formEditEvento"><input type="hidden" id="editEventoId"><div class="form-group"><label>Nome da Festa</label><input type="text" id="editNomeEvento" required></div><div class="form-group"><label>Tipo de Serviço</label><select id="editTipoServico"></select></div><div class="form-group"><label>Serviços Adicionais</label><div class="servicos-container"><div class="servicos-header"><select id="editSelectNovoServico"></select><button type="button" class="btn-add-servico" onclick="adicionarServicoEdit()">+ Adicionar</button></div><div id="editListaServicos" class="servicos-lista"></div><input type="hidden" id="editServicosContratados"></div></div><div class="form-group"><label>Endereço</label><input type="text" id="editEnderecoEvento" required></div><div class="form-row"><div class="form-group"><label>Cidade</label><input type="text" id="editCidadeEvento" required></div><div class="form-group"><label>Estado</label><input type="text" id="editEstadoEvento" maxlength="2"></div></div><div class="form-row"><div class="form-group"><label>Data</label><input type="date" id="editDataEvento" required></div><div class="form-group"><label>Hora</label><input type="time" id="editHoraEvento" required></div></div><div class="form-row"><div class="form-group"><label>Horas</label><input type="number" id="editQtdHoras" step="0.5" required></div><div class="form-group"><label>Valor</label><input type="number" id="editValorServico" step="any" required></div></div><div class="form-group"><label>Status</label><select id="editStatusEvento"><option>Agendado</option><option>Confirmado</option><option>Em andamento</option><option>Concluído</option><option>Cancelado</option></select></div><div class="form-group"><label>Observações</label><textarea id="editObservacoes"></textarea></div><button type="submit" class="btn btn-primary">Salvar</button><button type="button" class="btn btn-secondary" onclick="fecharModalEditEvento()">Cancelar</button></form></div></div>
+    <div id="modalEditEvento" class="modal-edit"><div class="modal-edit-content"><span class="close" onclick="fecharModalEditEvento()">&times;</span><h2>✏️ Editar Evento</h2><form id="formEditEvento"><input type="hidden" id="editEventoId"><div class="form-group"><label>Nome da Festa</label><input type="text" id="editNomeEvento" required></div><div class="form-group"><label>Fornecedor</label><input type="text" id="editFornecedorEvento" required></div><div class="form-group"><label>Tipo Serviço</label><select id="editTipoServico"></select></div><div class="form-group"><label>Serviços Adicionais</label><div class="servicos-container"><div class="servicos-header"><select id="editSelectNovoServico"></select><button type="button" class="btn-add-servico" onclick="adicionarServicoEdit()">+ Adicionar</button></div><div id="editListaServicos" class="servicos-lista"></div><input type="hidden" id="editServicosContratados"></div></div><div class="form-group"><label>Endereço</label><input type="text" id="editEnderecoEvento" required></div><div class="form-row"><div class="form-group"><label>Cidade</label><input type="text" id="editCidadeEvento" required></div><div class="form-group"><label>Estado</label><input type="text" id="editEstadoEvento" maxlength="2"></div></div><div class="form-row"><div class="form-group"><label>Data</label><input type="date" id="editDataEvento" required></div><div class="form-group"><label>Hora</label><input type="time" id="editHoraEvento" required></div></div><div class="form-row"><div class="form-group"><label>Horas</label><input type="number" id="editQtdHoras" step="0.5" required></div><div class="form-group"><label>Valor</label><input type="number" id="editValorServico" step="any" required></div></div><div class="form-group"><label>Status</label><select id="editStatusEvento"><option>Agendado</option><option>Confirmado</option><option>Em andamento</option><option>Concluído</option><option>Cancelado</option></select></div><div class="form-group"><label>Observações</label><textarea id="editObservacoes"></textarea></div><button type="submit" class="btn btn-primary">Salvar</button><button type="button" class="btn btn-secondary" onclick="fecharModalEditEvento()">Cancelar</button></form></div></div>
     <div id="modalConfirm" class="modal-confirm"><div class="modal-confirm-content"><h3>⚠️ Confirmar</h3><p id="mensagemConfirm"></p><div class="modal-buttons"><button class="btn btn-danger" id="btnConfirmarSim">Sim</button><button class="btn btn-secondary" id="btnConfirmarNao">Não</button></div></div></div>
     <div id="modalContrato" class="modal"><div class="modal-content"><span class="close" onclick="fecharModalContrato()">&times;</span><div id="modalContratoBody"></div><div style="text-align:center;"><button class="btn btn-success" onclick="baixarContratoJPEG()">📸 Baixar JPEG</button><button class="btn btn-primary" onclick="imprimirContrato()">🖨️ Imprimir</button></div></div></div>
 
     <script>
-        // Função para gerar cláusulas específicas conforme o tipo de serviço
-        function gerarClausulasPorServico(tipoServico, servicosAdicionais) {
-            const tipo = tipoServico.toLowerCase();
-            let clausula = "";
-            
-            if (tipo.includes("animação") || tipo.includes("animador") || tipo.includes("palhaço") || tipo.includes("mágico")) {
-                clausula = `<div class="clausula-especifica">
-                    <strong>🎪 CLÁUSULA ESPECÍFICA - ANIMAÇÃO INFANTIL:</strong><br>
-                    O contratante se compromete a disponibilizar um espaço adequado, limpo e seguro para a realização das atividades lúdicas. 
-                    Um responsável maior de idade deverá acompanhar as crianças durante toda a animação. O animador utilizará materiais 
-                    apropriados e seguros para a faixa etária informada.
-                </div>`;
-            } 
-            else if (tipo.includes("dj") || tipo.includes("música") || tipo.includes("som")) {
-                clausula = `<div class="clausula-especifica">
-                    <strong>🎧 CLÁUSULA ESPECÍFICA - DJ / MÚSICA:</strong><br>
-                    O contratante deverá disponibilizar um espaço coberto e seguro para os equipamentos de som, com acesso a tomadas 
-                    elétricas (110V/220V) de boa qualidade. O repertório musical será previamente aprovado pelo contratante.
-                </div>`;
-            }
-            else if (tipo.includes("fotógrafo") || tipo.includes("foto") || tipo.includes("filmagem")) {
-                clausula = `<div class="clausula-especifica">
-                    📸 CLÁUSULA ESPECÍFICA - FOTOGRAFIA / FILMAGEM:<br>
-                    As imagens capturadas serão de uso exclusivo do contratante. O fotógrafo se compromete a entregar as fotos editadas 
-                    em até 15 dias úteis. O contratante autoriza o uso de algumas imagens para portfólio do profissional.
-                </div>`;
-            }
-            else if (tipo.includes("decoração") || tipo.includes("decor")) {
-                clausula = `<div class="clausula-especifica">
-                    🎨 CLÁUSULA ESPECÍFICA - DECORAÇÃO:<br>
-                    A decoração será montada com 2 horas de antecedência. O contratante deve garantir que o local esteja limpo e vago 
-                    para montagem. Em caso de danos causados por terceiros, o reparo será de responsabilidade do contratante.
-                </div>`;
-            }
-            else if (tipo.includes("garçom") || tipo.includes("garçons") || tipo.includes("buffet") || tipo.includes("cozinha")) {
-                clausula = `<div class="clausula-especifica">
-                    🍽️ CLÁUSULA ESPECÍFICA - GARÇONS / BUFFET / ALIMENTAÇÃO:<br>
-                    Os profissionais de copa/cozinha utilizarão uniforme padronizado. O contratante deve fornecer os insumos e 
-                    equipamentos necessários quando não incluso no pacote.
-                </div>`;
-            }
-            else if (tipo.includes("fritadeira") || tipo.includes("fritura")) {
-                clausula = `<div class="clausula-especifica">
-                    🍗 CLÁUSULA ESPECÍFICA - FRITADEIRA:<br>
-                    O equipamento será operado exclusivamente por profissional qualificado. O contratante deve garantir ventilação 
-                    adequada e extintor de incêndio próximo ao local.
-                </div>`;
-            }
-            else {
-                clausula = `<div class="clausula-especifica">
-                    ⚡ CLÁUSULA GERAL DO SERVIÇO:<br>
-                    O serviço será prestado com profissionalismo e qualidade, seguindo as especificações acordadas neste contrato. 
-                    Qualquer alteração deverá ser comunicada por escrito com no mínimo 48 horas de antecedência.
-                </div>`;
-            }
-            
-            if (servicosAdicionais && servicosAdicionais.length > 0) {
-                clausula += `<div class="clausula-especifica" style="margin-top:10px;">
-                    <strong>➕ SERVIÇOS ADICIONAIS CONTRATADOS:</strong><br>
-                    Os serviços adicionais (${servicosAdicionais}) serão executados conforme padrão de qualidade do contratado, 
-                    seguindo as mesmas condições de pagamento e cancelamento do serviço principal.
-                </div>`;
-            }
-            return clausula;
-        }
-
-        // PWA - Instalação
+        // PWA - Instalação Automática
         let deferredPrompt;
         const installBanner = document.getElementById('installBanner');
         const installBtn = document.getElementById('installAppBtn');
         const closeInstallBtn = document.getElementById('closeInstallBtn');
 
+        // Detectar se o navegador suporta instalação PWA
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
+            // Mostrar banner apenas se não estiver em modo app standalone
             if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
                 installBanner.classList.add('show');
             }
         });
-        installBtn.addEventListener('click', async () => { if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') installBanner.classList.remove('show'); deferredPrompt = null; } });
-        closeInstallBtn.addEventListener('click', () => { installBanner.classList.remove('show'); });
-        if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) installBanner.style.display = 'none';
+
+        // Evento de instalação
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('App instalado com sucesso!');
+                    installBanner.classList.remove('show');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        // Fechar banner
+        closeInstallBtn.addEventListener('click', () => {
+            installBanner.classList.remove('show');
+        });
+
+        // Verificar se já está instalado e esconder banner
+        if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
+            installBanner.style.display = 'none';
+        }
+
+        // Tentar instalação automática (solicitação após carregar)
+        setTimeout(() => {
+            if (deferredPrompt && !window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
+                // Pequeno delay para não ser intrusivo
+                if (installBanner.classList.contains('show')) {
+                    // Já mostrando o banner, não precisa fazer nada
+                }
+            }
+        }, 3000);
 
         // CHAVES DE LICENÇA
         const LICENCA_MENSAL_KEY = "TOPFESTA-MENSAL-2024-X7K9";
@@ -699,19 +498,29 @@
         let listaServicosCadastrados = ["🎈 Animação Infantil", "🎨 Decoração", "🤡 Palhaço", "🪄 Mágico", "🍽️ Buffet", "📸 Fotógrafo", "🎧 DJ", "🍗 Fritadeira", "👨‍🍳 Garçons", "🧁 Doceria"];
         let timerInterval = null;
 
+        function gerarClausulasPorServico(tipoServico, servicosAdicionais) {
+            const tipo = tipoServico.toLowerCase();
+            let clausula = "";
+            if (tipo.includes("animação")) clausula = `<div class="clausula-especifica"><strong>🎪 CLÁUSULA ESPECÍFICA - ANIMAÇÃO INFANTIL:</strong><br>O contratante deve disponibilizar espaço adequado e seguro. Um responsável deve acompanhar as crianças.</div>`;
+            else if (tipo.includes("dj")) clausula = `<div class="clausula-especifica"><strong>🎧 CLÁUSULA ESPECÍFICA - DJ:</strong><br>Espaço coberto e seguro para equipamentos, acesso a tomadas elétricas de boa qualidade.</div>`;
+            else if (tipo.includes("fotógrafo")) clausula = `<div class="clausula-especifica">📸 CLÁUSULA ESPECÍFICA - FOTOGRAFIA:<br>Imagens de uso exclusivo do contratante. Entrega em até 15 dias úteis.</div>`;
+            else clausula = `<div class="clausula-especifica">⚡ CLÁUSULA GERAL:<br>Serviço prestado com profissionalismo conforme especificações acordadas.</div>`;
+            if (servicosAdicionais && servicosAdicionais.length > 0) {
+                clausula += `<div class="clausula-especifica"><strong>➕ SERVIÇOS ADICIONAIS:</strong><br>${servicosAdicionais}</div>`;
+            }
+            return clausula;
+        }
+
         function salvarServicos() { localStorage.setItem(STORAGE_SERVICOS_KEY, JSON.stringify(listaServicosCadastrados)); atualizarSelectServicos(); }
         function carregarServicos() { const saved = localStorage.getItem(STORAGE_SERVICOS_KEY); if (saved) listaServicosCadastrados = JSON.parse(saved); atualizarSelectServicos(); }
         function atualizarSelectServicos() {
-            const selectNovo = document.getElementById('selectNovoServico');
-            const selectEdit = document.getElementById('editSelectNovoServico');
-            const selectTipo = document.getElementById('tipoServico');
-            if (selectNovo) { selectNovo.innerHTML = '<option value="">Selecione um serviço</option>'; listaServicosCadastrados.forEach(s => selectNovo.innerHTML += `<option value="${s}">${s}</option>`); }
-            if (selectEdit) { selectEdit.innerHTML = '<option value="">Selecione um serviço</option>'; listaServicosCadastrados.forEach(s => selectEdit.innerHTML += `<option value="${s}">${s}</option>`); }
-            if (selectTipo) { selectTipo.innerHTML = '<option value="">Selecione o tipo de serviço</option>'; listaServicosCadastrados.forEach(s => selectTipo.innerHTML += `<option value="${s}">${s}</option>`); }
+            const selects = ['selectNovoServico', 'editSelectNovoServico', 'tipoServico'];
+            selects.forEach(id => {
+                const s = document.getElementById(id);
+                if (s) { s.innerHTML = '<option value="">Selecione</option>'; listaServicosCadastrados.forEach(serv => s.innerHTML += `<option value="${serv}">${serv}</option>`); }
+            });
             const listaDiv = document.getElementById('listaServicosCadastrados');
-            if (listaDiv) {
-                listaDiv.innerHTML = listaServicosCadastrados.map(s => `<span class="servico-item">${s} <button onclick="removerServicoCadastrado('${s}')" style="background:none; border:none; color:#e74c3c; cursor:pointer; font-weight:bold;">✕</button></span>`).join('');
-            }
+            if (listaDiv) listaDiv.innerHTML = listaServicosCadastrados.map(s => `<span class="servico-item">${s} <button onclick="removerServicoCadastrado('${s}')" style="background:none; border:none; color:#e74c3c; cursor:pointer;">✕</button></span>`).join('');
         }
         function adicionarNovoServico() {
             const novoServico = document.getElementById('novoServicoNome').value.trim();
@@ -720,20 +529,13 @@
                 salvarServicos();
                 document.getElementById('novoServicoNome').value = '';
                 mostrarAlerta(`✅ Serviço "${novoServico}" adicionado!`, "success");
-            } else if (listaServicosCadastrados.includes(novoServico)) {
-                mostrarAlerta("❌ Serviço já cadastrado!", "error");
-            } else { mostrarAlerta("❌ Digite um nome de serviço!", "error"); }
+            } else if (listaServicosCadastrados.includes(novoServico)) mostrarAlerta("❌ Serviço já cadastrado!", "error");
+            else mostrarAlerta("❌ Digite um nome de serviço!", "error");
         }
-        function removerServicoCadastrado(servico) {
-            if (confirm(`Remover "${servico}" da lista de serviços?`)) {
-                listaServicosCadastrados = listaServicosCadastrados.filter(s => s !== servico);
-                salvarServicos();
-                mostrarAlerta(`✅ Serviço removido!`, "success");
-            }
-        }
+        function removerServicoCadastrado(servico) { if (confirm(`Remover "${servico}"?`)) { listaServicosCadastrados = listaServicosCadastrados.filter(s => s !== servico); salvarServicos(); mostrarAlerta("✅ Serviço removido!", "success"); } }
 
-        function abrirGPS(endereco, cidade, estado) { window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${endereco}, ${cidade} - ${estado}, Brasil`)}`, '_blank'); }
-        function abrirWaze(endereco, cidade, estado) { window.open(`https://www.waze.com/ul?q=${encodeURIComponent(`${endereco}, ${cidade} - ${estado}, Brasil`)}&navigate=yes`, '_blank'); }
+        function abrirGPS(e,c,est) { window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${e}, ${c} - ${est}, Brasil`)}`, '_blank'); }
+        function abrirWaze(e,c,est) { window.open(`https://www.waze.com/ul?q=${encodeURIComponent(`${e}, ${c} - ${est}, Brasil`)}&navigate=yes`, '_blank'); }
 
         function getTempoRestanteMs() {
             const savedLic = localStorage.getItem(STORAGE_LICENSE_KEY);
@@ -743,7 +545,7 @@
             return 0;
         }
         function verificarAcesso() { return getTempoRestanteMs() > 0; }
-        function formatarTempoRestante() { const ms = getTempoRestanteMs(); const dias = Math.floor(ms / (1000 * 60 * 60 * 24)); if (dias > 0) return `${dias} dia${dias !== 1 ? 's' : ''}`; const horas = Math.floor(ms / (1000 * 60 * 60)); if (horas > 0) return `${horas} hora${horas !== 1 ? 's' : ''}`; const minutos = Math.floor(ms / (1000 * 60)); return `${minutos} minuto${minutos !== 1 ? 's' : ''}`; }
+        function formatarTempoRestante() { const ms = getTempoRestanteMs(); const dias = Math.floor(ms / (1000*60*60*24)); if (dias > 0) return `${dias} dia${dias!==1?'s':''}`; const horas = Math.floor(ms / (1000*60*60)); if (horas > 0) return `${horas} hora${horas!==1?'s':''}`; const minutos = Math.floor(ms / (1000*60)); return `${minutos} minuto${minutos!==1?'s':''}`; }
         function atualizarTimer() { const tr = getTempoRestanteMs(); const badge = document.getElementById('timerBadge'); const loginDisplay = document.getElementById('trialTimeDisplay'); const texto = tr > 0 ? formatarTempoRestante() : "expirado"; if (badge) badge.innerHTML = `⏱️ Teste: ${texto}`; if (loginDisplay) loginDisplay.innerHTML = texto; if (tr <= 0 && !localStorage.getItem(STORAGE_LICENSE_KEY) && document.getElementById('mainContent').classList.contains('visible')) fazerLogoutForcado(); }
         function iniciarTimer() { if (timerInterval) clearInterval(timerInterval); timerInterval = setInterval(atualizarTimer, 60000); atualizarTimer(); }
         function pararTimer() { if (timerInterval) { clearInterval(timerInterval); timerInterval = null; } }
@@ -804,10 +606,10 @@
             document.getElementById('estadoPerfil').value = perfilAnimador.estado || '';
             document.getElementById('instagramPerfil').value = perfilAnimador.instagram || '';
             const logoData = localStorage.getItem(STORAGE_LOGO_KEY);
-            if (logoData) { document.getElementById('logoPreviewPerfil').innerHTML = `<img src="${logoData}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`; document.getElementById('logoDisplay').innerHTML = `<img src="${logoData}" style="width:80px; height:80px; object-fit:cover; border-radius:50%; border:3px solid #F1C40F;">`; }
+            if (logoData) { document.getElementById('logoPreviewPerfil').innerHTML = `<img src="${logoData}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`; document.getElementById('logoDisplay').innerHTML = `<img src="${logoData}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;border:3px solid #F1C40F;">`; }
             else { document.getElementById('logoPreviewPerfil').innerHTML = '📷'; document.getElementById('logoDisplay').innerHTML = '🎉'; }
         }
-        function salvarPerfilForm(e) { e.preventDefault(); perfilAnimador = { nomeArtistico: document.getElementById('nomeArtistico').value, whatsapp: document.getElementById('whatsappPerfil').value, email: document.getElementById('emailPerfil').value, cidade: document.getElementById('cidadePerfil').value, estado: document.getElementById('estadoPerfil').value.toUpperCase(), instagram: document.getElementById('instagramPerfil').value }; salvarPerfil(); mostrarAlerta("✅ Perfil salvo!", "success"); }
+        function salvarPerfilForm(e) { e.preventDefault(); perfilAnimador = { nomeArtistico: document.getElementById('nomeArtistico').value, whatsapp: document.getElementById('whatsappPerfil').value, email: document.getElementById('emailPerfil').value, cidade: document.getElementById('cidadePerfil').value, estado: document.getElementById('estadoPerfil').value.toUpperCase(), instagram: document.getElementById('instagramPerfil').value }; salvarPerfil(); mostrarAlerta("✅ Perfil salvo!", "success"); showContent('listaEventos'); }
         function previewLogo(e) { const file = e.target.files[0]; if (file && (file.type === 'image/jpeg' || file.type === 'image/jpg')) { const reader = new FileReader(); reader.onload = ev => { localStorage.setItem(STORAGE_LOGO_KEY, ev.target.result); atualizarInterfacePerfil(); mostrarAlerta("✅ Logo atualizada!", "success"); }; reader.readAsDataURL(file); } else { mostrarAlerta("❌ Formato JPEG apenas!", "error"); } }
         function removerLogo() { localStorage.removeItem(STORAGE_LOGO_KEY); atualizarInterfacePerfil(); mostrarAlerta("Logo removida!", "success"); }
 
@@ -816,46 +618,23 @@
         function carregarDadosExemplo() {
             clientes = [{ id:1, nome:"MARIA SANTOS", cpf_cnpj:"12345678900", telefone:"(71) 99999-9999", email:"maria@email.com", endereco:"Rua das Flores, 100", cidade:"SALVADOR", estado:"BA" }];
             const data = new Date(new Date().getFullYear(), new Date().getMonth()+1, 15).toISOString().split('T')[0];
-            eventos = [{ id:1, nome_evento:"FESTA DA MARIA", cliente:clientes[0], tipo_servico:"🎈 Animação Infantil", servicos:"🎨 Decoração, 🤡 Palhaço", endereco_evento:"Salão de Festas", cidade_evento:"SALVADOR", estado_evento:"BA", tema_festa:"Princesas", faixa_etaria:"3-5", data_evento:data, hora_evento:"15:00", qtd_pessoas:50, qtd_horas:4, valor:1200, status:"Confirmado" }];
+            eventos = [{ id:1, nome_evento:"FESTA DA MARIA", cliente:clientes[0], fornecedor:"João Silva - Animador", tipo_servico:"🎈 Animação Infantil", servicos:"🎨 Decoração", endereco_evento:"Salão de Festas", cidade_evento:"SALVADOR", estado_evento:"BA", tema_festa:"Princesas", faixa_etaria:"3-5", data_evento:data, hora_evento:"15:00", qtd_pessoas:50, qtd_horas:4, valor:1200, status:"Confirmado" }];
             proximoIdCliente = 2; proximoIdEvento = 2; salvarDados(); atualizarSelectClientes(); mostrarAlerta("Exemplo carregado!", "success");
         }
 
         function gerarContratoHTML(e) {
             const val = e.valor||0, entrada=val*0.5, restante=val*0.5, dataEvento=e.data_evento.split('-').reverse().join('/'), cli=e.cliente;
             const logo = localStorage.getItem(STORAGE_LOGO_KEY);
-            const clausulasEspecificas = gerarClausulasPorServico(e.tipo_servico || "", e.servicos || "");
-            
-            document.getElementById('contratoPreview').innerHTML = `<div class="contrato-container"><div id="contratoParaImprimir" class="contrato-paper"><div style="text-align:center;">${logo?`<img src="${logo}" style="width:60px; border-radius:50%;">`:''}<div style="font-size:22px; color:#FF69B4;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div><div>${perfilAnimador.nomeArtistico||'Top Agenda Festa'}</div></div>
-            <div class="payment-note">⚠️ FORMA DE PAGAMENTO: <strong>50% na assinatura</strong> + <strong>50% na chegada ao evento</strong></div>
-            <div><strong>CONTRATANTE:</strong> ${cli.nome}<br><strong>CPF/CNPJ:</strong> ${cli.cpf_cnpj}<br><strong>Telefone:</strong> ${cli.telefone}<br><strong>Email:</strong> ${cli.email}<br><strong>Endereço:</strong> ${cli.endereco}, ${cli.cidade}/${cli.estado}</div>
-            <div style="margin-top:15px;"><strong>DADOS DO EVENTO:</strong><br>
-            <strong>Nome do Evento:</strong> ${e.nome_evento}<br>
-            <strong>Tipo de Serviço:</strong> ${e.tipo_servico||'Não informado'}<br>
-            <strong>Serviços Adicionais:</strong> ${e.servicos||'Nenhum'}<br>
-            <strong>Data:</strong> ${dataEvento} às ${e.hora_evento}<br>
-            <strong>Local:</strong> ${e.endereco_evento}, ${e.cidade_evento}/${e.estado_evento}<br>
-            <strong>Duração:</strong> ${e.qtd_horas}h | <strong>Pessoas:</strong> ${e.qtd_pessoas||0}<br>
-            <strong>Observações:</strong> ${e.observacoes||'Nenhuma'}</div>
-            <div style="margin-top:15px; background:#FFF0F5; padding:12px; border-radius:15px;">
-                <strong>💰 VALORES:</strong><br>
-                Valor Total: <strong style="color:#FF69B4;">R$ ${val.toFixed(2)}</strong><br>
-                ▶ 1ª parcela (50% na assinatura): <strong>R$ ${entrada.toFixed(2)}</strong><br>
-                ▶ 2ª parcela (50% na chegada): <strong>R$ ${restante.toFixed(2)}</strong><br>
-                <small>✅ O contrato terá validade jurídica após o pagamento da 1ª parcela.</small>
-            </div>
-            <div style="margin-top:15px;"><strong>📋 CLÁUSULAS CONTRATUAIS:</strong><br>
-            <strong>CLÁUSULA 1ª - DO OBJETO:</strong> O presente contrato tem como objeto a prestação do serviço descrito acima.<br>
-            <strong>CLÁUSULA 2ª - DAS OBRIGAÇÕES DO CONTRATADO:</strong> Executar o serviço com profissionalismo, pontualidade e qualidade.<br>
-            <strong>CLÁUSULA 3ª - DAS OBRIGAÇÕES DO CONTRATANTE:</strong> Disponibilizar local adequado e comunicar alterações com 48h de antecedência.<br>
-            ${clausulasEspecificas}
-            <strong>CLÁUSULA 4ª - DO CANCELAMENTO:</strong> Em caso de cancelamento, <strong style="color:#e74c3c;">NÃO HAVERÁ REEMBOLSO</strong>. O contratante poderá remarcar em até 90 dias.<br>
-            <strong>CLÁUSULA 5ª - DO ATRASO:</strong> O CONTRATADO aguardará até <strong>15 minutos</strong> sem custos. Após este período, poderá haver cobrança ou cancelamento.<br>
-            <strong>CLÁUSULA 6ª - DO FORO:</strong> Foro da comarca de ${perfilAnimador.cidade||'Salvador'}.</div>
-            <div class="contrato-signature" style="display:flex; justify-content:space-between; margin-top:30px;">
-                <div style="text-align:center;"><div style="border-top:1px solid #333; width:220px; margin-top:30px; padding-top:10px;">${perfilAnimador.nomeArtistico||'Top Agenda Festa'}<br>Contratado</div></div>
-                <div style="text-align:center;"><div style="border-top:1px solid #333; width:220px; margin-top:30px; padding-top:10px;">${cli.nome}<br>Contratante</div></div>
-            </div>
-            <div style="text-align:center; font-size:10px; margin-top:20px;">${perfilAnimador.cidade||'Salvador'}, ${new Date().toLocaleDateString()}</div></div><div style="text-align:center; margin-top:20px;"><button class="btn btn-primary" onclick="visualizarContratoJPEG()">👁️ Visualizar</button> <button class="btn btn-success" onclick="imprimirContrato()">🖨️ Imprimir</button> <button class="btn btn-warning" onclick="baixarContratoJPEG()">📸 Baixar JPEG</button></div></div>`;
+            const clausulas = gerarClausulasPorServico(e.tipo_servico || "", e.servicos || "");
+            document.getElementById('contratoPreview').innerHTML = `<div class="contrato-container"><div id="contratoParaImprimir" class="contrato-paper"><div style="text-align:center;">${logo?`<img src="${logo}" style="width:60px;border-radius:50%;">`:''}<div style="font-size:22px;color:#FF69B4;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div><div>${perfilAnimador.nomeArtistico||'Top Agenda Festa'}</div></div>
+            <div class="payment-note">⚠️ PAGAMENTO: <strong>50% na assinatura + 50% na chegada</strong></div>
+            <div><strong>CONTRATANTE:</strong> ${cli.nome}<br><strong>CPF:</strong> ${cli.cpf_cnpj}<br><strong>Telefone:</strong> ${cli.telefone}<br><strong>Email:</strong> ${cli.email}<br><strong>Endereço:</strong> ${cli.endereco}, ${cli.cidade}/${cli.estado}</div>
+            <div style="margin-top:15px;"><strong>CONTRATADO:</strong> ${e.fornecedor || 'Não informado'}</div>
+            <div><strong>EVENTO:</strong> ${e.nome_evento}<br><strong>Tipo de Serviço:</strong> ${e.tipo_servico}<br><strong>Serviços Adicionais:</strong> ${e.servicos||'Nenhum'}<br><strong>Data:</strong> ${dataEvento} às ${e.hora_evento}<br><strong>Local:</strong> ${e.endereco_evento}, ${e.cidade_evento}/${e.estado_evento}<br><strong>Duração:</strong> ${e.qtd_horas}h | <strong>Pessoas:</strong> ${e.qtd_pessoas||0}</div>
+            <div style="background:#FFF0F5;padding:12px;"><strong>💰 VALOR TOTAL:</strong> R$ ${val.toFixed(2)}<br>Entrada (50%): R$ ${entrada.toFixed(2)}<br>Saldo (50% na chegada): R$ ${restante.toFixed(2)}</div>
+            <div><strong>📋 CLÁUSULAS:</strong><br><strong>1ª - DO OBJETO:</strong> Prestação do serviço conforme descrito.<br><strong>2ª - OBRIGAÇÕES:</strong> Executar com profissionalismo e pontualidade.<br>${clausulas}<br><strong>3ª - CANCELAMENTO:</strong> Sem reembolso, apenas remarcação em 90 dias.<br><strong>4ª - ATRASO:</strong> Aguarda 15 minutos sem custos.<br><strong>5ª - FORO:</strong> Comarca de ${perfilAnimador.cidade||'Salvador'}.</div>
+            <div style="display:flex;justify-content:space-between;margin-top:30px;"><div style="border-top:1px solid #333;width:220px;text-align:center;">${e.fornecedor||'Contratado'}</div><div style="border-top:1px solid #333;width:220px;text-align:center;">${cli.nome}</div></div>
+            <div style="text-align:center;font-size:10px;">${perfilAnimador.cidade||'Salvador'}, ${new Date().toLocaleDateString()}</div></div><div style="text-align:center;margin-top:20px;"><button class="btn btn-primary" onclick="visualizarContratoJPEG()">👁️ Visualizar</button> <button class="btn btn-success" onclick="imprimirContrato()">🖨️ Imprimir</button> <button class="btn btn-warning" onclick="baixarContratoJPEG()">📸 Baixar JPEG</button></div></div>`;
         }
         function visualizarContratoJPEG() { const el = document.getElementById('contratoParaImprimir'); if(el) html2canvas(el,{scale:2}).then(c=>{ document.getElementById('modalContratoBody').innerHTML=`<img src="${c.toDataURL('image/jpeg')}" style="width:100%">`; document.getElementById('modalContrato').style.display='block'; }); }
         function baixarContratoJPEG() { const el = document.getElementById('contratoParaImprimir'); if(el) html2canvas(el,{scale:2}).then(c=>{ const a=document.createElement('a'); a.download=`contrato_${Date.now()}.jpeg`; a.href=c.toDataURL('image/jpeg'); a.click(); mostrarAlerta("Contrato baixado!","success"); }); }
@@ -872,11 +651,12 @@
             if(!futuros.length){ document.getElementById('agendaProximosMeses').innerHTML='<div class="empty-agenda">🎉 Nenhum evento nos próximos 3 meses.</div>'; return; }
             let html='<div class="agenda-grid">'; 
             futuros.forEach(e=>{ const dias=Math.ceil((new Date(e.data_evento)-new Date())/(86400000)); 
-                html+=`<div class="agenda-card"><div class="agenda-header">🎪 ${formatarData(e.data_evento)} (em ${dias} dias)</div><div class="agenda-body">
+                html+=`<div class="agenda-card"><div class="agenda-header">🎪 ${formatarData(e.data_evento)} (${dias} dias)</div><div class="agenda-body">
                     <div class="agenda-date">🎉 ${e.nome_evento}</div><div>⏰ ${e.hora_evento} - ${e.qtd_horas}h</div><div>👤 ${e.cliente.nome}</div>
+                    <div>📋 Fornecedor: ${e.fornecedor||'-'}</div>
                     <div>📍 ${e.endereco_evento}, ${e.cidade_evento}</div>
                     <div><span class="agenda-badge badge-${e.status==='Confirmado'?'confirmado':'agendado'}">${e.status}</span></div>
-                    <div><button onclick="abrirModalEditEvento(${e.id})" style="background:#FF69B4; color:white; border:none; padding:4px 12px; border-radius:20px; margin-top:8px;">✏️ Editar</button> <button onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')" style="background:#e74c3c; color:white; border:none; padding:4px 12px; border-radius:20px;">🗑️ Excluir</button></div>
+                    <div><button onclick="abrirModalEditEvento(${e.id})" style="background:#FF69B4;color:white;border:none;padding:4px 12px;border-radius:20px;margin-top:8px;">✏️ Editar</button> <button onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')" style="background:#e74c3c;color:white;border:none;padding:4px 12px;border-radius:20px;">🗑️ Excluir</button></div>
                 </div></div>`; }); 
             html+='</div>'; document.getElementById('agendaProximosMeses').innerHTML=html;
         }
@@ -886,23 +666,24 @@
         
         function cadastrarCliente(e){ e.preventDefault(); const c={id:proximoIdCliente++, nome:document.getElementById('nomeCliente').value.toUpperCase(), cpf_cnpj:document.getElementById('cpfCliente').value, telefone:document.getElementById('telefoneCliente').value, email:document.getElementById('emailCliente').value, endereco:document.getElementById('enderecoCliente').value, cidade:document.getElementById('cidadeCliente').value.toUpperCase(), estado:document.getElementById('estadoCliente').value.toUpperCase()}; clientes.push(c); salvarDados(); atualizarSelectClientes(); mostrarAlerta(`✅ Cliente cadastrado!`,"success"); document.getElementById('formCliente').reset();}
         
-        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n<table>\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td><td>${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n<tr>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
+        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n不错\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td><td>${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n</table>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
         function verDetalhesCliente(id){ const c=clientes.find(c=>c.id===id); alert(`🎉 CLIENTE\n\n${c.nome}\nCPF: ${c.cpf_cnpj}\nTel: ${c.telefone}\nEmail: ${c.email}\nEndereço: ${c.endereco}\n${c.cidade}/${c.estado}`); }
         
-        function cadastrarEvento(e){ e.preventDefault(); const cid=parseInt(document.getElementById('clienteEvento').value); const cl=clientes.find(c=>c.id===cid); if(!cl){mostrarAlerta("❌ Selecione um cliente!","error"); return;} const tipoServico = document.getElementById('tipoServico').value; if(!tipoServico){mostrarAlerta("❌ Selecione o tipo de serviço!","error"); return;} const ev={id:proximoIdEvento++, nome_evento:document.getElementById('nomeEvento').value.toUpperCase(), cliente:cl, tipo_servico:tipoServico, servicos:servicosSelecionados.join(', '), endereco_evento:document.getElementById('enderecoEvento').value, cidade_evento:document.getElementById('cidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('estadoEvento').value.toUpperCase(), tema_festa:document.getElementById('temaFesta').value, faixa_etaria:document.getElementById('faixaEtaria').value, data_evento:document.getElementById('dataEvento').value, hora_evento:document.getElementById('horaEvento').value, qtd_pessoas:parseInt(document.getElementById('qtdPessoas').value)||0, qtd_horas:parseFloat(document.getElementById('qtdHoras').value), valor:parseFloat(document.getElementById('valorServico').value), telefone_contato:document.getElementById('telefoneContato').value, observacoes:document.getElementById('observacoes').value, status:"Agendado"}; eventos.push(ev); salvarDados(); mostrarAlerta(`✅ Evento cadastrado!`,"success"); document.getElementById('formEvento').reset(); servicosSelecionados=[]; atualizarListaServicos();}
+        function cadastrarEvento(e){ e.preventDefault(); const cid=parseInt(document.getElementById('clienteEvento').value); const cl=clientes.find(c=>c.id===cid); if(!cl){mostrarAlerta("❌ Selecione um cliente!","error"); return;} const tipoServico = document.getElementById('tipoServico').value; if(!tipoServico){mostrarAlerta("❌ Selecione o tipo de serviço!","error"); return;} const fornecedor = document.getElementById('fornecedorEvento').value.trim(); if(!fornecedor){mostrarAlerta("❌ Informe o fornecedor!","error"); return;} const ev={id:proximoIdEvento++, nome_evento:document.getElementById('nomeEvento').value.toUpperCase(), cliente:cl, fornecedor:fornecedor, tipo_servico:tipoServico, servicos:servicosSelecionados.join(', '), endereco_evento:document.getElementById('enderecoEvento').value, cidade_evento:document.getElementById('cidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('estadoEvento').value.toUpperCase(), tema_festa:document.getElementById('temaFesta').value, faixa_etaria:document.getElementById('faixaEtaria').value, data_evento:document.getElementById('dataEvento').value, hora_evento:document.getElementById('horaEvento').value, qtd_pessoas:parseInt(document.getElementById('qtdPessoas').value)||0, qtd_horas:parseFloat(document.getElementById('qtdHoras').value), valor:parseFloat(document.getElementById('valorServico').value), telefone_contato:document.getElementById('telefoneContato').value, observacoes:document.getElementById('observacoes').value, status:"Agendado"}; eventos.push(ev); salvarDados(); mostrarAlerta(`✅ Evento cadastrado!`,"success"); document.getElementById('formEvento').reset(); servicosSelecionados=[]; atualizarListaServicos();}
         
         function listarEventos(){ filtrarEventos(); }
         function filtrarEventos(){ 
             const filtro = document.getElementById('filtroStatus')?.value || 'todos'; 
             let evs = filtro === 'todos' ? eventos : eventos.filter(e => e.status === filtro); 
             if(!evs.length){ document.getElementById('eventosList').innerHTML = '<div style="text-align:center; padding:40px; color:#999;">🎉 Nenhum evento encontrado.</div>'; return; }
-            let h = '<div class="table-container">\n</table>\n<thead>\n<tr><th>Evento</th><th>Cliente</th><th>Tipo Serviço</th><th>Data/Hora</th><th>Local</th><th>Valor</th><th>Status</th><th>GPS</th><th>Ações</th></tr>\n</thead>\n<tbody>';
+            let h = '<div class="table-container">\n不错\n<thead>\n<tr><th>Evento</th><th>Cliente</th><th>Fornecedor</th><th>Tipo Serviço</th><th>Data/Hora</th><th>Local</th><th>Valor</th><th>Status</th><th>GPS</th><th>Ações</th></tr>\n</thead>\n<tbody>';
             evs.forEach(e => {
                 const statusClass = e.status === 'Confirmado' ? 'status-confirmado' : (e.status === 'Agendado' ? 'status-agendado' : (e.status === 'Em andamento' ? 'status-andamento' : (e.status === 'Concluído' ? 'status-concluido' : 'status-cancelado')));
                 h += `<tr>
-                    <td><strong>${e.nome_evento}</strong>${e.tema_festa ? `<br><small style="color:#FF69B4;">🎨 ${e.tema_festa}</small>` : ''}</td>
+                    <td><strong>${e.nome_evento}</strong>${e.tema_festa ? `<br><small>🎨 ${e.tema_festa}</small>` : ''}</td>
                     <td>${e.cliente.nome}</td>
-                    <td><small>${e.tipo_servico || '-'}</small><br><small>${e.servicos ? `+ ${e.servicos}` : ''}</small></td>
+                    <td><small>${e.fornecedor || '-'}</small></td>
+                    <td><small>${e.tipo_servico || '-'}</small>${e.servicos ? `<br><small>+ ${e.servicos}</small>` : ''}</td>
                     <td>${formatarData(e.data_evento)}<br>${e.hora_evento}</td>
                     <td><small>${e.endereco_evento.substring(0,25)}${e.endereco_evento.length > 25 ? '...' : ''}</small><br>${e.cidade_evento}/${e.estado_evento}</td>
                     <td><strong>R$ ${(e.valor || 0).toFixed(2)}</strong></td>
@@ -911,13 +692,13 @@
                     <td class="table-actions"><button class="btn-small btn-ver" onclick="verDetalhesEvento(${e.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditEvento(${e.id})">Editar</button> <button class="btn-small btn-status" onclick="atualizarStatus(${e.id})">Status</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')">Excluir</button></td>
                 </tr>`;
             });
-            h += '</tbody>\n</table>\n</div>';
+            h += '</tbody></table></div>';
             document.getElementById('eventosList').innerHTML = h;
         }
         
-        function verDetalhesEvento(id){ const e=eventos.find(e=>e.id===id); alert(`🎪 EVENTO\n\n${e.nome_evento}\nCliente: ${e.cliente.nome}\nTipo Serviço: ${e.tipo_servico||'-'}\nServiços: ${e.servicos||'Nenhum'}\nData: ${formatarData(e.data_evento)} ${e.hora_evento}\nDuração: ${e.qtd_horas}h\nPessoas: ${e.qtd_pessoas||0}\nLocal: ${e.endereco_evento}\n${e.cidade_evento}/${e.estado_evento}\nValor: R$ ${(e.valor||0).toFixed(2)}\nStatus: ${e.status}`); }
+        function verDetalhesEvento(id){ const e=eventos.find(e=>e.id===id); alert(`🎪 EVENTO\n\n${e.nome_evento}\nCliente: ${e.cliente.nome}\nFornecedor: ${e.fornecedor||'-'}\nData: ${formatarData(e.data_evento)} ${e.hora_evento}\nValor: R$ ${(e.valor||0).toFixed(2)}\nStatus: ${e.status}`); }
         
-        function atualizarStatus(id){ const e=eventos.find(e=>e.id===id); const op=prompt(`Status atual: ${e.status}\n\n1-Agendado 2-Confirmado 3-Em andamento 4-Concluído 5-Cancelado`); const sts=["Agendado","Confirmado","Em andamento","Concluído","Cancelado"]; if(op&&op>=1&&op<=5){ e.status=sts[parseInt(op)-1]; salvarDados(); listarEventos(); atualizarAgenda(); mostrarAlerta("✅ Status atualizado!","success"); } }
+        function atualizarStatus(id){ const e=eventos.find(e=>e.id===id); const op=prompt(`Status: ${e.status}\n1-Agendado 2-Confirmado 3-Em andamento 4-Concluído 5-Cancelado`); const sts=["Agendado","Confirmado","Em andamento","Concluído","Cancelado"]; if(op&&op>=1&&op<=5){ e.status=sts[parseInt(op)-1]; salvarDados(); listarEventos(); atualizarAgenda(); mostrarAlerta("✅ Status atualizado!","success"); } }
         function carregarDadosContrato(){ const id=parseInt(document.getElementById('selectEventoContrato').value); if(id){ contratoAtual=eventos.find(e=>e.id===id); gerarContratoHTML(contratoAtual); } else document.getElementById('contratoPreview').innerHTML=''; }
         function mostrarEstatisticas(){ const total=eventos.reduce((s,e)=>s+(e.valor||0),0); document.getElementById('estatisticasContent').innerHTML=`<div class="stats-grid"><div class="stat-card"><div class="stat-number">${clientes.length}</div><div class="stat-label">Clientes</div></div><div class="stat-card"><div class="stat-number">${eventos.length}</div><div class="stat-label">Eventos</div></div><div class="stat-card"><div class="stat-number">R$ ${total.toFixed(2)}</div><div class="stat-label">Faturamento</div></div></div>`; }
         function confirmarLimparDados(){ if(confirm("⚠️ LIMPAR TODOS OS DADOS?")){ clientes=[]; eventos=[]; proximoIdCliente=1; proximoIdEvento=1; salvarDados(); atualizarSelectClientes(); atualizarAgenda(); listarClientes(); listarEventos(); mostrarAlerta("Dados limpos!","success"); } }
@@ -933,8 +714,8 @@
         function abrirModalEditCliente(id){ const c=clientes.find(c=>c.id===id); if(c){ document.getElementById('editClienteId').value=c.id; document.getElementById('editNomeCliente').value=c.nome; document.getElementById('editCpfCliente').value=c.cpf_cnpj; document.getElementById('editTelefoneCliente').value=c.telefone; document.getElementById('editEmailCliente').value=c.email; document.getElementById('editEnderecoCliente').value=c.endereco; document.getElementById('editCidadeCliente').value=c.cidade; document.getElementById('editEstadoCliente').value=c.estado; document.getElementById('modalEditCliente').style.display='block'; } }
         function salvarEdicaoCliente(e){ e.preventDefault(); const id=parseInt(document.getElementById('editClienteId').value); const idx=clientes.findIndex(c=>c.id===id); if(idx!==-1){ clientes[idx]={...clientes[idx], nome:document.getElementById('editNomeCliente').value.toUpperCase(), cpf_cnpj:document.getElementById('editCpfCliente').value, telefone:document.getElementById('editTelefoneCliente').value, email:document.getElementById('editEmailCliente').value, endereco:document.getElementById('editEnderecoCliente').value, cidade:document.getElementById('editCidadeCliente').value.toUpperCase(), estado:document.getElementById('editEstadoCliente').value.toUpperCase()}; salvarDados(); listarClientes(); atualizarSelectClientes(); atualizarAgenda(); fecharModalEditCliente(); mostrarAlerta("Cliente atualizado!","success"); } }
         function fecharModalEditCliente(){ document.getElementById('modalEditCliente').style.display='none'; }
-        function abrirModalEditEvento(id){ const e=eventos.find(e=>e.id===id); if(e){ servicosSelecionadosEdit=e.servicos?e.servicos.split(', ').map(s=>s.trim()):[]; atualizarListaServicosEdit(); document.getElementById('editEventoId').value=e.id; document.getElementById('editNomeEvento').value=e.nome_evento; document.getElementById('editEnderecoEvento').value=e.endereco_evento; document.getElementById('editCidadeEvento').value=e.cidade_evento; document.getElementById('editEstadoEvento').value=e.estado_evento; document.getElementById('editDataEvento').value=e.data_evento; document.getElementById('editHoraEvento').value=e.hora_evento; document.getElementById('editQtdHoras').value=e.qtd_horas; document.getElementById('editValorServico').value=e.valor; document.getElementById('editStatusEvento').value=e.status; document.getElementById('editObservacoes').value=e.observacoes||''; document.getElementById('editTipoServico').value=e.tipo_servico||''; document.getElementById('modalEditEvento').style.display='block'; } }
-        function salvarEdicaoEvento(e){ e.preventDefault(); const id=parseInt(document.getElementById('editEventoId').value); const idx=eventos.findIndex(ev=>ev.id===id); if(idx!==-1){ eventos[idx]={...eventos[idx], nome_evento:document.getElementById('editNomeEvento').value.toUpperCase(), tipo_servico:document.getElementById('editTipoServico').value, servicos:document.getElementById('editServicosContratados').value, endereco_evento:document.getElementById('editEnderecoEvento').value, cidade_evento:document.getElementById('editCidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('editEstadoEvento').value.toUpperCase(), data_evento:document.getElementById('editDataEvento').value, hora_evento:document.getElementById('editHoraEvento').value, qtd_horas:parseFloat(document.getElementById('editQtdHoras').value), valor:parseFloat(document.getElementById('editValorServico').value), status:document.getElementById('editStatusEvento').value, observacoes:document.getElementById('editObservacoes').value}; salvarDados(); listarEventos(); atualizarAgenda(); atualizarSelectEventosContrato(); fecharModalEditEvento(); mostrarAlerta("Evento atualizado!","success"); } }
+        function abrirModalEditEvento(id){ const e=eventos.find(e=>e.id===id); if(e){ servicosSelecionadosEdit=e.servicos?e.servicos.split(', ').map(s=>s.trim()):[]; atualizarListaServicosEdit(); document.getElementById('editEventoId').value=e.id; document.getElementById('editNomeEvento').value=e.nome_evento; document.getElementById('editFornecedorEvento').value=e.fornecedor||''; document.getElementById('editEnderecoEvento').value=e.endereco_evento; document.getElementById('editCidadeEvento').value=e.cidade_evento; document.getElementById('editEstadoEvento').value=e.estado_evento; document.getElementById('editDataEvento').value=e.data_evento; document.getElementById('editHoraEvento').value=e.hora_evento; document.getElementById('editQtdHoras').value=e.qtd_horas; document.getElementById('editValorServico').value=e.valor; document.getElementById('editStatusEvento').value=e.status; document.getElementById('editObservacoes').value=e.observacoes||''; document.getElementById('editTipoServico').value=e.tipo_servico||''; document.getElementById('modalEditEvento').style.display='block'; } }
+        function salvarEdicaoEvento(e){ e.preventDefault(); const id=parseInt(document.getElementById('editEventoId').value); const idx=eventos.findIndex(ev=>ev.id===id); if(idx!==-1){ eventos[idx]={...eventos[idx], nome_evento:document.getElementById('editNomeEvento').value.toUpperCase(), fornecedor:document.getElementById('editFornecedorEvento').value, tipo_servico:document.getElementById('editTipoServico').value, servicos:document.getElementById('editServicosContratados').value, endereco_evento:document.getElementById('editEnderecoEvento').value, cidade_evento:document.getElementById('editCidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('editEstadoEvento').value.toUpperCase(), data_evento:document.getElementById('editDataEvento').value, hora_evento:document.getElementById('editHoraEvento').value, qtd_horas:parseFloat(document.getElementById('editQtdHoras').value), valor:parseFloat(document.getElementById('editValorServico').value), status:document.getElementById('editStatusEvento').value, observacoes:document.getElementById('editObservacoes').value}; salvarDados(); listarEventos(); atualizarAgenda(); atualizarSelectEventosContrato(); fecharModalEditEvento(); mostrarAlerta("Evento atualizado!","success"); } }
         function fecharModalEditEvento(){ document.getElementById('modalEditEvento').style.display='none'; }
         function confirmarExclusaoEvento(id,nome){ itemParaExcluir={tipo:'evento',id}; document.getElementById('mensagemConfirm').innerHTML=`Excluir "${nome}"?`; document.getElementById('modalConfirm').style.display='block'; }
         function confirmarExclusaoCliente(id,nome){ if(eventos.some(e=>e.cliente.id===id)){ mostrarAlerta(`Cliente possui eventos!`,"error"); return; } itemParaExcluir={tipo:'cliente',id}; document.getElementById('mensagemConfirm').innerHTML=`Excluir "${nome}"?`; document.getElementById('modalConfirm').style.display='block'; }

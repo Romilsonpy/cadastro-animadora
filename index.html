@@ -8,24 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Top Agenda Festa">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="data:application/manifest+json,{
-        \"name\": \"Top Agenda Festa - Sistema para Fornecedores de Eventos\",
-        \"short_name\": \"Top Agenda Festa\",
-        \"description\": \"Sistema completo para gerenciar eventos, clientes, serviços e contratos personalizados.\",
-        \"start_url\": \".\",
-        \"display\": \"standalone\",
-        \"theme_color\": \"#FF69B4\",
-        \"background_color\": \"#FFE4E1\",
-        \"orientation\": \"portrait-primary\",
-        \"icons\": [
-            {
-                \"src\": \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF69B4'/%3E%3Cstop offset='100%25' stop-color='%239B59B6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-size='45' text-anchor='middle' fill='white' font-family='Arial'%3E🎉%3C/text%3E%3C/svg%3E\",
-                \"sizes\": \"any\",
-                \"type\": \"image/svg+xml\",
-                \"purpose\": \"any maskable\"
-            }
-        ]
-    }">
+    <title>Top Agenda Festa - Sistema de Gestão de Eventos</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,121 +31,43 @@
             padding: 20px;
         }
 
-        /* Banner Flutuante de Planos */
-        .floating-banner {
+        /* Banner Flutuante de Promoção - Último dia de teste */
+        .promo-banner {
             position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 260px;
-            background: linear-gradient(135deg, #FF69B4, #9B59B6);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            z-index: 1500;
-            border: 2px solid #FFD700;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
-        }
-        .floating-banner:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-        .banner-header {
-            background: rgba(0,0,0,0.3);
-            padding: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 450px;
+            background: linear-gradient(135deg, #FF69B4, #9B59B6, #FF69B4);
+            border-radius: 30px;
+            padding: 25px;
+            z-index: 3000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border: 3px solid var(--primary-yellow);
+            animation: bounceIn 0.5s ease;
             text-align: center;
-            font-weight: bold;
-            color: #FFD700;
-            font-size: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: none;
         }
-        .banner-body {
-            padding: 15px;
-            text-align: center;
+        .promo-banner.show { display: block; }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.05); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
-        .banner-planos {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        .plano-item {
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
-            padding: 8px;
-            backdrop-filter: blur(5px);
-        }
-        .plano-nome {
-            font-size: 14px;
-            font-weight: bold;
-            color: #FFD700;
-        }
-        .plano-valor {
-            font-size: 22px;
-            font-weight: bold;
-            color: white;
-        }
-        .banner-contato {
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
-            padding: 8px;
-            margin-top: 10px;
-        }
-        .banner-contato p {
-            color: white;
-            font-size: 11px;
-            margin: 2px 0;
-        }
-        .banner-whatsapp {
-            background: #25D366;
-            margin-top: 12px;
-            padding: 8px;
-            border-radius: 40px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        .banner-whatsapp:hover {
-            background: #20b859;
-            transform: scale(1.02);
-        }
-        .close-banner {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
-            font-size: 14px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .close-banner:hover {
-            background: #e74c3c;
-        }
+        .promo-banner h2 { color: #FFD700; font-size: 28px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .promo-banner p { color: white; margin-bottom: 15px; font-size: 14px; }
+        .promo-plans { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .promo-plan { background: rgba(255,255,255,0.2); border-radius: 20px; padding: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .promo-plan-name { font-weight: bold; color: #FFD700; font-size: 18px; }
+        .promo-plan-price { font-size: 24px; font-weight: bold; color: white; }
+        .promo-whatsapp { background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: bold; margin: 15px 0; transition: all 0.3s ease; }
+        .promo-whatsapp:hover { transform: scale(1.02); background: #128C7E; }
+        .promo-close { background: rgba(255,255,255,0.3); color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; margin-top: 10px; font-size: 14px; }
+        .promo-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2999; display: none; }
+        .promo-overlay.show { display: block; }
 
-        @media (max-width: 768px) {
-            .floating-banner {
-                bottom: 80px;
-                right: 10px;
-                left: 10px;
-                width: auto;
-                max-width: 300px;
-                right: 10px;
-                left: auto;
-            }
-        }
-
+        /* Banner de instalação do App */
         .install-prompt {
             position: fixed;
             bottom: 20px;
@@ -315,10 +220,7 @@
 
         .tutorial-step { background: #FFF9F9; border-radius: 20px; padding: 20px; margin-bottom: 20px; border-left: 5px solid var(--primary-pink); }
         .tutorial-step h3 { color: var(--primary-pink); margin-bottom: 10px; font-size: 18px; }
-        .resumo-box { background: linear-gradient(135deg, #FFF0F5, #FFE4E1); border: 2px solid var(--primary-pink); border-radius: 20px; padding: 20px; margin: 20px 0; }
-        .resumo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
-        .resumo-item { background: white; border-radius: 15px; padding: 12px; text-align: center; }
-        .contato-rapido { background: #25D366; color: white; padding: 15px; border-radius: 50px; text-align: center; margin-top: 20px; }
+        .tutorial-step p { color: #555; line-height: 1.6; }
 
         .form-group { margin-bottom: 20px; }
         .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
@@ -348,12 +250,16 @@
         .status-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: bold; }
         .status-agendado { background: var(--primary-yellow); color: #744210; }
         .status-confirmado { background: var(--primary-green); color: white; }
+        .status-andamento { background: var(--primary-blue); color: white; }
+        .status-concluido { background: #95A5A6; color: white; }
+        .status-cancelado { background: #e74c3c; color: white; }
 
         .servicos-cadastrados { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
         .servico-item { background: #FFE4E1; padding: 5px 12px; border-radius: 20px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
 
         .contrato-paper { background: white; max-width: 210mm; margin: 0 auto; padding: 25px; border: 2px dashed var(--primary-pink); border-radius: 20px; }
         .payment-note { background: #FFF9F9; border-left: 4px solid var(--primary-yellow); padding: 12px; margin: 20px 0; border-radius: 15px; }
+        .clausula-especifica { background: #F0F8FF; border-left: 4px solid #FF69B4; padding: 12px; margin: 10px 0; border-radius: 10px; }
 
         .modal-edit, .modal-confirm, .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; }
         .modal-edit-content, .modal-confirm-content, .modal-content { background: white; margin: 5% auto; padding: 25px; border-radius: 30px; width: 90%; max-width: 700px; position: relative; border: 2px solid var(--primary-pink); }
@@ -364,6 +270,7 @@
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
         .alert-success { background: linear-gradient(135deg, var(--primary-green), #27AE60); color: white; }
         .alert-error { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+        .alert-info { background: linear-gradient(135deg, var(--primary-blue), #2980B9); color: white; }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
         .stat-card { background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple)); color: white; padding: 20px; border-radius: 25px; text-align: center; }
@@ -380,6 +287,7 @@
         .servicos-lista { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
         .servico-tag { background: linear-gradient(135deg, #FF69B4, #9B59B6); color: white; padding: 5px 15px; border-radius: 50px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
         .remove-servico { cursor: pointer; background: rgba(255,255,255,0.3); width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .remove-servico:hover { background: #e74c3c; }
         .btn-add-servico { background: linear-gradient(135deg, #2ECC71, #27AE60); color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; }
 
         @media (max-width: 768px) {
@@ -387,43 +295,29 @@
             .form-row { grid-template-columns: 1fr; }
             .logo-container { flex-direction: column; }
             .timer-badge, .logout-btn { position: relative; top: 0; left: 0; right: 0; margin: 5px; display: inline-block; }
+            .plano-card { flex-direction: column; text-align: center; }
             .table-actions { flex-direction: column; gap: 5px; }
             .btn-small { width: 100%; text-align: center; }
             .install-prompt { flex-direction: column; text-align: center; border-radius: 30px; }
-            .floating-banner { right: 10px; left: auto; bottom: 80px; }
+            .promo-banner { width: 95%; padding: 20px; }
+            .promo-plan { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Banner Flutuante de Planos -->
-    <div id="floatingBanner" class="floating-banner">
-        <button class="close-banner" onclick="fecharBanner()">✕</button>
-        <div class="banner-header">
-            💰 PLANOS 💰
+    <!-- Banner Flutuante de Promoção - Aparece no último dia de teste -->
+    <div id="promoOverlay" class="promo-overlay"></div>
+    <div id="promoBanner" class="promo-banner">
+        <h2>🎉 ÚLTIMO DIA! 🎉</h2>
+        <p>Seu período de teste termina hoje! Não perca seus dados.</p>
+        <div class="promo-plans">
+            <div class="promo-plan"><span class="promo-plan-name">📅 MENSAL</span><span class="promo-plan-price">R$ 25</span></div>
+            <div class="promo-plan"><span class="promo-plan-name">📆 SEMESTRAL</span><span class="promo-plan-price">R$ 100</span></div>
+            <div class="promo-plan"><span class="promo-plan-name">🏆 ANUAL</span><span class="promo-plan-price">R$ 150</span></div>
         </div>
-        <div class="banner-body">
-            <div class="banner-planos">
-                <div class="plano-item">
-                    <div class="plano-nome">📅 MENSAL</div>
-                    <div class="plano-valor">R$ 25</div>
-                </div>
-                <div class="plano-item">
-                    <div class="plano-nome">📆 SEMESTRAL</div>
-                    <div class="plano-valor">R$ 100</div>
-                </div>
-                <div class="plano-item">
-                    <div class="plano-nome">🏆 ANUAL</div>
-                    <div class="plano-valor">R$ 150</div>
-                </div>
-            </div>
-            <div class="banner-contato">
-                <p>📞 (71) 98290-5513</p>
-                <p>📧 dj.romilson@hotmail.com</p>
-            </div>
-            <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20adquirir%20uma%20licença%20do%20Top%20Agenda%20Festa." target="_blank" class="banner-whatsapp">
-                💬 CHAVE DE ATIVAÇÃO VIA WHATSAPP APÓS PAGAMENTO!
-            </a>
-        </div>
+        <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20adquirir%20a%20licença%20do%20Top%20Agenda%20Festa.%20Meu%20período%20de%20teste%20está%20terminando!" target="_blank" class="promo-whatsapp">💬 CHAVE DE ATIVAÇÃO VIA WHATSAPP APÓS PAGAMENTO</a>
+        <div style="font-size: 12px; color: #FFD700; margin: 10px 0;">(71) 98290-5513 | dj.romilson@hotmail.com</div>
+        <button class="promo-close" onclick="fecharPromoBanner()">Fechar</button>
     </div>
 
     <div id="installBanner" class="install-prompt">
@@ -432,156 +326,20 @@
         <button id="closeInstallBtn" class="close-install">✕</button>
     </div>
 
-    <div id="firstAccessOverlay" class="first-access-overlay">
-        <div class="first-access-box">
-            <div class="logo-icon">🎉🎈</div>
-            <h2>🎉 Bem-vindo ao Top Agenda Festa! 🎉</h2>
-            <p>Primeiro acesso - Cadastre seu usuário e senha</p>
-            <input type="text" id="newUsername" class="first-input" placeholder="Nome de usuário">
-            <input type="password" id="newPassword" class="first-input" placeholder="Senha">
-            <input type="password" id="confirmPassword" class="first-input" placeholder="Confirmar senha">
-            <div style="font-size:12px; color:#888; text-align:left;">🔒 Mínimo 3 caracteres</div>
-            <button class="first-btn" onclick="cadastrarPrimeiroAcesso()">🎨 Criar Acesso e Continuar 🎨</button>
-            <div id="firstAccessError" class="first-error"></div>
-        </div>
-    </div>
-
-    <div id="loginOverlay" class="login-overlay">
-        <div class="login-box">
-            <div class="logo-icon">🎭🎪</div>
-            <h2>Top Agenda Festa</h2>
-            <p>O melhor sistema para organizar suas festas e eventos!</p>
-            <p style="font-size:12px; color:#888;">⏱️ Período de teste: <strong id="trialTimeDisplay">7 dias</strong></p>
-            <input type="text" id="loginUser" class="login-input" placeholder="Usuário">
-            <input type="password" id="loginPass" class="login-input" placeholder="Senha">
-            <button class="login-btn" onclick="fazerLogin()">🎈 Entrar no Sistema 🎈</button>
-            <div id="loginError" class="login-error">❌ Usuário ou senha incorretos!</div>
-        </div>
-    </div>
-
-    <div id="licenseOverlay" class="license-overlay">
-        <div class="license-box">
-            <div class="logo-icon">🔑🎫</div>
-            <h2>Ativação de Licença</h2>
-            <p id="licenseMessage" style="color:#e74c3c; font-weight:bold;">⚠️ Seu período de teste de 7 dias expirou! ⚠️</p>
-            <p>Escolha um plano:</p>
-            <div class="planos-container">
-                <div class="plano-card"><div class="plano-info"><div class="plano-nome">📅 Plano Mensal</div><div class="plano-preco">R$ 25,00</div><div class="plano-duracao">30 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%2025,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div>
-                <div class="plano-card"><div class="plano-info"><div class="plano-nome">📆 Plano Semestral</div><div class="plano-preco">R$ 100,00</div><div class="plano-duracao">180 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20SEMESTRAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%20100,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div>
-                <div class="plano-card"><div class="plano-info"><div class="plano-nome">🏆 Plano Anual</div><div class="plano-preco">R$ 150,00</div><div class="plano-duracao">365 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%20150,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div>
-            </div>
-            <p style="margin-top:15px; font-size:12px;">🔐 Após o pagamento, você receberá sua chave via WhatsApp.</p>
-            <div style="margin-top:20px; border-top:1px solid #FFE4E1; padding-top:15px;">
-                <p>Já possui uma chave?</p>
-                <input type="text" id="licenseKeyInput" placeholder="Digite sua chave" style="width:100%; padding:12px; border-radius:50px; margin:10px 0;">
-                <button class="btn-license" onclick="ativarLicencaComChave()">✅ Ativar Licença</button>
-            </div>
-        </div>
-    </div>
+    <div id="firstAccessOverlay" class="first-access-overlay"><div class="first-access-box"><div class="logo-icon">🎉🎈</div><h2>🎉 Bem-vindo ao Top Agenda Festa! 🎉</h2><p>Primeiro acesso - Cadastre seu usuário e senha</p><input type="text" id="newUsername" class="first-input" placeholder="Nome de usuário"><input type="password" id="newPassword" class="first-input" placeholder="Senha"><input type="password" id="confirmPassword" class="first-input" placeholder="Confirmar senha"><div style="font-size:12px; color:#888; text-align:left;">🔒 Mínimo 3 caracteres</div><button class="first-btn" onclick="cadastrarPrimeiroAcesso()">🎨 Criar Acesso e Continuar 🎨</button><div id="firstAccessError" class="first-error"></div></div></div>
+    <div id="loginOverlay" class="login-overlay"><div class="login-box"><div class="logo-icon">🎭🎪</div><h2>Top Agenda Festa</h2><p>O melhor sistema para organizar suas festas e eventos!</p><p style="font-size:12px; color:#888;">⏱️ Período de teste: <strong id="trialTimeDisplay">7 dias</strong></p><input type="text" id="loginUser" class="login-input" placeholder="Usuário"><input type="password" id="loginPass" class="login-input" placeholder="Senha"><button class="login-btn" onclick="fazerLogin()">🎈 Entrar no Sistema 🎈</button><div id="loginError" class="login-error">❌ Usuário ou senha incorretos!</div></div></div>
+    <div id="licenseOverlay" class="license-overlay"><div class="license-box"><div class="logo-icon">🔑🎫</div><h2>Ativação de Licença</h2><p id="licenseMessage" style="color:#e74c3c; font-weight:bold;">⚠️ Seu período de teste expirou! ⚠️</p><p>Escolha um plano:</p><div class="planos-container"><div class="plano-card"><div class="plano-info"><div class="plano-nome">📅 Plano Mensal</div><div class="plano-preco">R$ 25,00</div><div class="plano-duracao">30 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%2025,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div><div class="plano-card"><div class="plano-info"><div class="plano-nome">📆 Plano Semestral</div><div class="plano-preco">R$ 100,00</div><div class="plano-duracao">180 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20SEMESTRAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%20100,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div><div class="plano-card"><div class="plano-info"><div class="plano-nome">🏆 Plano Anual</div><div class="plano-preco">R$ 150,00</div><div class="plano-duracao">365 dias</div></div><a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Top%20Agenda%20Festa%20no%20valor%20de%20R$%20150,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a></div></div><p style="margin-top:15px; font-size:12px;">🔐 Após o pagamento, você receberá sua chave via WhatsApp.</p><div style="margin-top:20px; border-top:1px solid #FFE4E1; padding-top:15px;"><p>Já possui uma chave?</p><input type="text" id="licenseKeyInput" placeholder="Digite sua chave" style="width:100%; padding:12px; border-radius:50px; margin:10px 0;"><button class="btn-license" onclick="ativarLicencaComChave()">✅ Ativar Licença</button></div></div></div>
 
     <div id="mainContent" class="main-content">
         <div class="container">
-            <div class="header">
-                <div class="timer-badge" id="timerBadge">⏱️ Teste: 7 dias</div>
-                <button class="logout-btn" onclick="fazerLogout()">🚪 Sair</button>
-                <div class="logo-container">
-                    <div id="logoDisplay" class="logo-placeholder">🎉</div>
-                    <div class="logo-text"><h1>🎉 TOP AGENDA FESTA 🎉</h1><div class="tagline" style="color:#FFD700;">⭐ Organize suas festas com profissionalismo! ⭐</div></div>
-                    <div class="logo-icon">🎈🎪</div>
-                </div>
-                <div class="perfil-info" id="perfilInfo"><span>⭐ Carregando perfil... ⭐</span></div>
-                <div class="balloon-animation"><div class="balloon"></div><div class="balloon"></div><div class="balloon"></div></div>
-            </div>
-
+            <div class="header"><div class="timer-badge" id="timerBadge">⏱️ Teste: 7 dias</div><button class="logout-btn" onclick="fazerLogout()">🚪 Sair</button><div class="logo-container"><div id="logoDisplay" class="logo-placeholder">🎉</div><div class="logo-text"><h1>🎉 TOP AGENDA FESTA 🎉</h1><div class="tagline" style="color:#FFD700;">⭐ Organize suas festas com profissionalismo! ⭐</div></div><div class="logo-icon">🎈🎪</div></div><div class="perfil-info" id="perfilInfo"><span>⭐ Carregando perfil... ⭐</span></div><div class="balloon-animation"><div class="balloon"></div><div class="balloon"></div><div class="balloon"></div></div></div>
             <div class="dashboard"><div class="dashboard-title">🎪 PRÓXIMOS EVENTOS 🎪</div><div id="agendaProximosMeses"></div></div>
-
-            <div class="menu"><div class="menu-buttons">
-                <button class="btn btn-primary" onclick="showContent('perfil')">⭐ Meu Perfil</button>
-                <button class="btn btn-primary" onclick="showContent('cadastroCliente')">📝 Novo Cliente</button>
-                <button class="btn btn-success" onclick="showContent('cadastroEvento')">🎯 Novo Evento</button>
-                <button class="btn btn-info" onclick="showContent('listaClientes')">👥 Listar Clientes</button>
-                <button class="btn btn-info" onclick="showContent('listaEventos')">🎪 Listar Eventos</button>
-                <button class="btn btn-contract" onclick="showContent('contrato')" style="background:linear-gradient(135deg,#E67E22,#D35400); color:white;">📄 Gerar Contrato</button>
-                <button class="btn btn-warning" onclick="showContent('servicos')">🛠️ Meus Serviços</button>
-                <button class="btn btn-warning" onclick="showContent('estatisticas')">📊 Estatísticas</button>
-                <button class="btn btn-secondary" onclick="showContent('manutencao')">🔧 Manutenção</button>
-                <button class="btn btn-help" onclick="showContent('ajuda')">📖 Ajuda / Tutorial</button>
-                <button class="btn btn-secondary" onclick="carregarDadosExemplo()">🎈 Carregar Exemplo</button>
-            </div></div>
-
-            <div id="perfil" class="content"><h2>⭐ Meu Perfil Profissional ⭐</h2>
-                <form id="formPerfil">
-                    <div class="form-row"><div class="form-group"><label>Nome Artístico *</label><input type="text" id="nomeArtistico" required></div><div class="form-group"><label>WhatsApp *</label><input type="text" id="whatsappPerfil" required></div></div>
-                    <div class="form-row"><div class="form-group"><label>Email *</label><input type="email" id="emailPerfil" required></div><div class="form-group"><label>Cidade *</label><input type="text" id="cidadePerfil" required></div></div>
-                    <div class="form-row"><div class="form-group"><label>Estado (UF) *</label><input type="text" id="estadoPerfil" maxlength="2" required></div><div class="form-group"><label>Instagram</label><input type="text" id="instagramPerfil" placeholder="@seuinstagram"></div></div>
-                    <div class="form-group"><label>Sua Logo / Foto de Perfil (JPEG)</label>
-                        <div class="logo-upload"><div id="logoPreviewPerfil" class="logo-preview-placeholder">📷</div><input type="file" id="logoUpload" accept="image/jpeg, image/jpg" style="display:none" onchange="previewLogo(event)"><label for="logoUpload" class="file-input-label">📸 Selecionar Logo</label><button type="button" class="btn btn-secondary" onclick="removerLogo()" style="padding:8px 20px;">🗑️ Remover</button></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">💾 Salvar Perfil</button>
-                </form>
-            </div>
-
-            <div id="cadastroCliente" class="content"><h2>📝 Cadastro de Cliente</h2>
-                <form id="formCliente"><div class="form-row"><div class="form-group"><label>Nome Completo *</label><input type="text" id="nomeCliente" required></div><div class="form-group"><label>CPF/CNPJ *</label><input type="text" id="cpfCliente" required></div></div>
-                <div class="form-row"><div class="form-group"><label>Telefone *</label><input type="text" id="telefoneCliente" required></div><div class="form-group"><label>Email *</label><input type="email" id="emailCliente" required></div></div>
-                <div class="form-group"><label>Endereço *</label><input type="text" id="enderecoCliente" required></div>
-                <div class="form-row"><div class="form-group"><label>Cidade *</label><input type="text" id="cidadeCliente" required></div><div class="form-group"><label>Estado (UF) *</label><input type="text" id="estadoCliente" maxlength="2" required></div></div>
-                <button type="submit" class="btn btn-primary">✅ Cadastrar Cliente</button></form>
-            </div>
-
-            <div id="cadastroEvento" class="content"><h2>🎯 Cadastro de Evento</h2>
-                <form id="formEvento">
-                    <div class="form-group"><label>Cliente *</label><select id="clienteEvento" required><option value="">Selecione</option></select></div>
-                    <div class="form-group"><label>Nome da Festa *</label><input type="text" id="nomeEvento" required></div>
-                    <div class="form-group"><label>Contratado / Fornecedor *</label><input type="text" id="fornecedorEvento" required placeholder="Nome completo do fornecedor contratado"></div>
-                    <div class="form-group"><label>Tipo de Serviço *</label><select id="tipoServico" required><option value="">Selecione</option></select></div>
-                    <div class="form-group"><label>Serviços Adicionais</label>
-                        <div class="servicos-container"><div class="servicos-header"><select id="selectNovoServico"><option value="">Selecione um serviço</option></select><button type="button" class="btn-add-servico" onclick="adicionarServico()">+ Adicionar Serviço</button></div><div id="listaServicos" class="servicos-lista"></div><input type="hidden" id="servicosContratados"></div>
-                    </div>
-                    <div class="form-group"><label>Endereço *</label><input type="text" id="enderecoEvento" required></div>
-                    <div class="form-row"><div class="form-group"><label>Cidade *</label><input type="text" id="cidadeEvento" required></div><div class="form-group"><label>Estado *</label><input type="text" id="estadoEvento" maxlength="2" required></div></div>
-                    <div class="form-row"><div class="form-group"><label>Tema da Festa</label><input type="text" id="temaFesta"></div><div class="form-group"><label>Faixa Etária</label><select id="faixaEtaria"><option>0-2</option><option>3-5</option><option>6-8</option><option>9-12</option><option>Todas</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label>Data *</label><input type="date" id="dataEvento" required></div><div class="form-group"><label>Hora *</label><input type="time" id="horaEvento" required></div></div>
-                    <div class="form-row"><div class="form-group"><label>Quantidade de Pessoas</label><input type="number" id="qtdPessoas" min="1"></div><div class="form-group"><label>Horas Contratadas *</label><input type="number" id="qtdHoras" min="1" step="0.5" required></div></div>
-                    <div class="form-row"><div class="form-group"><label>Valor do Serviço (R$) *</label><input type="number" id="valorServico" min="0" step="any" required></div><div class="form-group"><label>Telefone Contato</label><input type="text" id="telefoneContato"></div></div>
-                    <div class="form-group"><label>Observações</label><textarea id="observacoes"></textarea></div>
-                    <button type="submit" class="btn btn-success">✅ Cadastrar Evento</button>
-                </form>
-            </div>
-
-            <div id="servicos" class="content"><h2>🛠️ Meus Serviços</h2>
-                <div class="form-group"><label>Adicionar Novo Serviço</label>
-                    <div class="form-row"><input type="text" id="novoServicoNome" placeholder="Ex: Garçons, DJ, Fotógrafo..."><button type="button" class="btn btn-success" onclick="adicionarNovoServico()">+ Adicionar</button></div>
-                </div>
-                <h3>📋 Serviços Cadastrados</h3>
-                <div id="listaServicosCadastrados" class="servicos-cadastrados"></div>
-            </div>
-
-            <div id="ajuda" class="content">
-                <h2>📖 Ajuda / Tutorial</h2>
-                <div class="resumo-box">
-                    <h3>🎯 RESUMO DO PROGRAMA - TOP AGENDA FESTA</h3>
-                    <p style="text-align:center;">Sistema completo para organizar clientes, eventos, contratos e finanças - feito sob medida para fornecedores de festas!</p>
-                    <div class="resumo-grid">
-                        <div class="resumo-item">✅ Cadastro de Clientes</div>
-                        <div class="resumo-item">✅ Cadastro de Eventos</div>
-                        <div class="resumo-item">✅ Serviços Personalizados</div>
-                        <div class="resumo-item">✅ Agenda Visual</div>
-                        <div class="resumo-item">✅ GPS Integrado</div>
-                        <div class="resumo-item">✅ Contrato com Logo</div>
-                        <div class="resumo-item">✅ Contrato em JPEG</div>
-                        <div class="resumo-item">✅ Estatísticas</div>
-                        <div class="resumo-item">✅ Backup de Dados</div>
-                        <div class="resumo-item">✅ Instala como App</div>
-                    </div>
-                    <div class="contato-rapido">📞 (71) 98290-5513 | 📧 dj.romilson@hotmail.com</div>
-                </div>
-                <div class="tutorial-step"><h3>1️⃣ Primeiro Acesso</h3><p>Crie seu usuário e senha.</p></div>
-                <div class="tutorial-step"><h3>2️⃣ Configurar Perfil</h3><p>Adicione nome artístico, contato e logo.</p></div>
-                <div class="tutorial-step"><h3>3️⃣ Cadastrar Clientes e Eventos</h3><p>Gerencie tudo em um só lugar!</p></div>
-                <div class="tutorial-step"><h3>4️⃣ Gere Contratos</h3><p>Contratos profissionais com sua logo.</p></div>
-            </div>
-
+            <div class="menu"><div class="menu-buttons"><button class="btn btn-primary" onclick="showContent('perfil')">⭐ Meu Perfil</button><button class="btn btn-primary" onclick="showContent('cadastroCliente')">📝 Novo Cliente</button><button class="btn btn-success" onclick="showContent('cadastroEvento')">🎯 Novo Evento</button><button class="btn btn-info" onclick="showContent('listaClientes')">👥 Listar Clientes</button><button class="btn btn-info" onclick="showContent('listaEventos')">🎪 Listar Eventos</button><button class="btn btn-contract" onclick="showContent('contrato')" style="background:linear-gradient(135deg,#E67E22,#D35400); color:white;">📄 Gerar Contrato</button><button class="btn btn-warning" onclick="showContent('servicos')">🛠️ Meus Serviços</button><button class="btn btn-warning" onclick="showContent('estatisticas')">📊 Estatísticas</button><button class="btn btn-secondary" onclick="showContent('manutencao')">🔧 Manutenção</button><button class="btn btn-help" onclick="showContent('ajuda')">📖 Ajuda / Tutorial</button><button class="btn btn-secondary" onclick="carregarDadosExemplo()">🎈 Carregar Exemplo</button></div></div>
+            <div id="perfil" class="content"><h2>⭐ Meu Perfil Profissional ⭐</h2><form id="formPerfil"><div class="form-row"><div class="form-group"><label>Nome Artístico *</label><input type="text" id="nomeArtistico" required></div><div class="form-group"><label>WhatsApp *</label><input type="text" id="whatsappPerfil" required></div></div><div class="form-row"><div class="form-group"><label>Email *</label><input type="email" id="emailPerfil" required></div><div class="form-group"><label>Cidade *</label><input type="text" id="cidadePerfil" required></div></div><div class="form-row"><div class="form-group"><label>Estado (UF) *</label><input type="text" id="estadoPerfil" maxlength="2" required></div><div class="form-group"><label>Instagram</label><input type="text" id="instagramPerfil" placeholder="@seuinstagram"></div></div><div class="form-group"><label>Sua Logo / Foto de Perfil (JPEG)</label><div class="logo-upload"><div id="logoPreviewPerfil" class="logo-preview-placeholder">📷</div><input type="file" id="logoUpload" accept="image/jpeg, image/jpg" style="display:none" onchange="previewLogo(event)"><label for="logoUpload" class="file-input-label">📸 Selecionar Logo</label><button type="button" class="btn btn-secondary" onclick="removerLogo()" style="padding:8px 20px;">🗑️ Remover</button></div></div><button type="submit" class="btn btn-primary">💾 Salvar Perfil</button></form></div>
+            <div id="cadastroCliente" class="content"><h2>📝 Cadastro de Cliente</h2><form id="formCliente"><div class="form-row"><div class="form-group"><label>Nome Completo *</label><input type="text" id="nomeCliente" required></div><div class="form-group"><label>CPF/CNPJ *</label><input type="text" id="cpfCliente" required></div></div><div class="form-row"><div class="form-group"><label>Telefone *</label><input type="text" id="telefoneCliente" required></div><div class="form-group"><label>Email *</label><input type="email" id="emailCliente" required></div></div><div class="form-group"><label>Endereço *</label><input type="text" id="enderecoCliente" required></div><div class="form-row"><div class="form-group"><label>Cidade *</label><input type="text" id="cidadeCliente" required></div><div class="form-group"><label>Estado (UF) *</label><input type="text" id="estadoCliente" maxlength="2" required></div></div><button type="submit" class="btn btn-primary">✅ Cadastrar Cliente</button></form></div>
+            <div id="cadastroEvento" class="content"><h2>🎯 Cadastro de Evento</h2><form id="formEvento"><div class="form-group"><label>Cliente *</label><select id="clienteEvento" required><option value="">Selecione</option></select></div><div class="form-group"><label>Nome da Festa *</label><input type="text" id="nomeEvento" required></div><div class="form-group"><label>Contratado / Fornecedor *</label><input type="text" id="fornecedorEvento" required placeholder="Nome completo do fornecedor contratado"></div><div class="form-group"><label>Tipo de Serviço *</label><select id="tipoServico" required><option value="">Selecione</option></select></div><div class="form-group"><label>Serviços Adicionais</label><div class="servicos-container"><div class="servicos-header"><select id="selectNovoServico"><option value="">Selecione um serviço</option></select><button type="button" class="btn-add-servico" onclick="adicionarServico()">+ Adicionar Serviço</button></div><div id="listaServicos" class="servicos-lista"></div><input type="hidden" id="servicosContratados"></div></div><div class="form-group"><label>Endereço *</label><input type="text" id="enderecoEvento" required></div><div class="form-row"><div class="form-group"><label>Cidade *</label><input type="text" id="cidadeEvento" required></div><div class="form-group"><label>Estado *</label><input type="text" id="estadoEvento" maxlength="2" required></div></div><div class="form-row"><div class="form-group"><label>Tema da Festa</label><input type="text" id="temaFesta"></div><div class="form-group"><label>Faixa Etária</label><select id="faixaEtaria"><option>0-2</option><option>3-5</option><option>6-8</option><option>9-12</option><option>Todas</option></select></div></div><div class="form-row"><div class="form-group"><label>Data *</label><input type="date" id="dataEvento" required></div><div class="form-group"><label>Hora *</label><input type="time" id="horaEvento" required></div></div><div class="form-row"><div class="form-group"><label>Quantidade de Pessoas</label><input type="number" id="qtdPessoas" min="1"></div><div class="form-group"><label>Horas Contratadas *</label><input type="number" id="qtdHoras" min="1" step="0.5" required></div></div><div class="form-row"><div class="form-group"><label>Valor do Serviço (R$) *</label><input type="number" id="valorServico" min="0" step="any" required></div><div class="form-group"><label>Telefone Contato</label><input type="text" id="telefoneContato"></div></div><div class="form-group"><label>Observações</label><textarea id="observacoes"></textarea></div><button type="submit" class="btn btn-success">✅ Cadastrar Evento</button></form></div>
+            <div id="servicos" class="content"><h2>🛠️ Meus Serviços</h2><div class="form-group"><label>Adicionar Novo Serviço</label><div class="form-row"><input type="text" id="novoServicoNome" placeholder="Ex: Garçons, DJ, Fotógrafo..."><button type="button" class="btn btn-success" onclick="adicionarNovoServico()">+ Adicionar</button></div></div><h3>📋 Serviços Cadastrados</h3><div id="listaServicosCadastrados" class="servicos-cadastrados"></div></div>
+            <div id="ajuda" class="content"><h2>📖 Ajuda / Tutorial</h2><div class="tutorial-step"><h3>1️⃣ Primeiro Acesso</h3><p>Crie seu usuário e senha.</p></div><div class="tutorial-step"><h3>2️⃣ Configure seu Perfil</h3><p>Adicione nome artístico, contato e logo.</p></div><div class="tutorial-step"><h3>3️⃣ Cadastre Clientes e Eventos</h3><p>Gerencie tudo em um só lugar!</p></div><div class="tutorial-step"><h3>4️⃣ Gere Contratos</h3><p>Contratos profissionais com seu logo e cláusulas específicas.</p></div></div>
             <div id="listaClientes" class="content"><h2>👥 Lista de Clientes</h2><div id="clientesList"></div></div>
             <div id="listaEventos" class="content"><h2>🎪 Lista de Eventos</h2><div class="form-group"><select id="filtroStatus" onchange="filtrarEventos()" style="max-width:200px;"><option value="todos">Todos</option><option value="Agendado">Agendado</option><option value="Confirmado">Confirmado</option><option value="Em andamento">Em andamento</option><option value="Concluído">Concluído</option><option value="Cancelado">Cancelado</option></select></div><div id="eventosList"></div></div>
             <div id="contrato" class="content"><h2>📄 Gerar Contrato</h2><div class="form-group"><select id="selectEventoContrato" onchange="carregarDadosContrato()"><option value="">Selecione um evento</option></select></div><div id="contratoPreview"></div></div>
@@ -590,35 +348,50 @@
             <div class="footer"><p>🎉 Top Agenda Festa - O melhor sistema para organizar suas festas! 🎉</p><p id="footerContato">📞 WhatsApp: (71) 98290-5513</p></div>
         </div>
     </div>
-
     <a href="https://wa.me/5571982905513" class="whatsapp-btn" target="_blank">💬</a>
 
+    <!-- Modais -->
     <div id="modalEditCliente" class="modal-edit"><div class="modal-edit-content"><span class="close" onclick="fecharModalEditCliente()">&times;</span><h2>✏️ Editar Cliente</h2><form id="formEditCliente"><input type="hidden" id="editClienteId"><div class="form-row"><div class="form-group"><label>Nome</label><input type="text" id="editNomeCliente" required></div><div class="form-group"><label>CPF/CNPJ</label><input type="text" id="editCpfCliente" required></div></div><div class="form-row"><div class="form-group"><label>Telefone</label><input type="text" id="editTelefoneCliente" required></div><div class="form-group"><label>Email</label><input type="email" id="editEmailCliente" required></div></div><div class="form-group"><label>Endereço</label><input type="text" id="editEnderecoCliente" required></div><div class="form-row"><div class="form-group"><label>Cidade</label><input type="text" id="editCidadeCliente" required></div><div class="form-group"><label>Estado</label><input type="text" id="editEstadoCliente" maxlength="2" required></div></div><button type="submit" class="btn btn-primary">Salvar</button><button type="button" class="btn btn-secondary" onclick="fecharModalEditCliente()">Cancelar</button></form></div></div>
     <div id="modalEditEvento" class="modal-edit"><div class="modal-edit-content"><span class="close" onclick="fecharModalEditEvento()">&times;</span><h2>✏️ Editar Evento</h2><form id="formEditEvento"><input type="hidden" id="editEventoId"><div class="form-group"><label>Nome da Festa</label><input type="text" id="editNomeEvento" required></div><div class="form-group"><label>Fornecedor</label><input type="text" id="editFornecedorEvento" required></div><div class="form-group"><label>Tipo Serviço</label><select id="editTipoServico"></select></div><div class="form-group"><label>Serviços Adicionais</label><div class="servicos-container"><div class="servicos-header"><select id="editSelectNovoServico"></select><button type="button" class="btn-add-servico" onclick="adicionarServicoEdit()">+ Adicionar</button></div><div id="editListaServicos" class="servicos-lista"></div><input type="hidden" id="editServicosContratados"></div></div><div class="form-group"><label>Endereço</label><input type="text" id="editEnderecoEvento" required></div><div class="form-row"><div class="form-group"><label>Cidade</label><input type="text" id="editCidadeEvento" required></div><div class="form-group"><label>Estado</label><input type="text" id="editEstadoEvento" maxlength="2"></div></div><div class="form-row"><div class="form-group"><label>Data</label><input type="date" id="editDataEvento" required></div><div class="form-group"><label>Hora</label><input type="time" id="editHoraEvento" required></div></div><div class="form-row"><div class="form-group"><label>Horas</label><input type="number" id="editQtdHoras" step="0.5" required></div><div class="form-group"><label>Valor</label><input type="number" id="editValorServico" step="any" required></div></div><div class="form-group"><label>Status</label><select id="editStatusEvento"><option>Agendado</option><option>Confirmado</option><option>Em andamento</option><option>Concluído</option><option>Cancelado</option></select></div><div class="form-group"><label>Observações</label><textarea id="editObservacoes"></textarea></div><button type="submit" class="btn btn-primary">Salvar</button><button type="button" class="btn btn-secondary" onclick="fecharModalEditEvento()">Cancelar</button></form></div></div>
     <div id="modalConfirm" class="modal-confirm"><div class="modal-confirm-content"><h3>⚠️ Confirmar</h3><p id="mensagemConfirm"></p><div class="modal-buttons"><button class="btn btn-danger" id="btnConfirmarSim">Sim</button><button class="btn btn-secondary" id="btnConfirmarNao">Não</button></div></div></div>
     <div id="modalContrato" class="modal"><div class="modal-content"><span class="close" onclick="fecharModalContrato()">&times;</span><div id="modalContratoBody"></div><div style="text-align:center;"><button class="btn btn-success" onclick="baixarContratoJPEG()">📸 Baixar JPEG</button><button class="btn btn-primary" onclick="imprimirContrato()">🖨️ Imprimir</button></div></div></div>
 
     <script>
-        function fecharBanner() {
-            document.getElementById('floatingBanner').style.display = 'none';
-        }
-
+        // PWA - Instalação
         let deferredPrompt;
         const installBanner = document.getElementById('installBanner');
         const installBtn = document.getElementById('installAppBtn');
         const closeInstallBtn = document.getElementById('closeInstallBtn');
 
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
-                installBanner.classList.add('show');
-            }
-        });
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) installBanner.classList.add('show'); });
         installBtn.addEventListener('click', async () => { if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') installBanner.classList.remove('show'); deferredPrompt = null; } });
         closeInstallBtn.addEventListener('click', () => { installBanner.classList.remove('show'); });
         if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) installBanner.style.display = 'none';
 
+        // Função para mostrar banner promocional no último dia de teste
+        function mostrarPromoSeUltimoDia() {
+            const trialStart = localStorage.getItem(STORAGE_TRIAL_KEY);
+            if (trialStart && !localStorage.getItem(STORAGE_LICENSE_KEY)) {
+                const startTime = parseInt(trialStart);
+                const endTime = startTime + (TRIAL_DAYS * 24 * 60 * 60 * 1000);
+                const now = new Date().getTime();
+                const diasRestantes = Math.ceil((endTime - now) / (1000 * 60 * 60 * 24));
+                // Mostra banner quando faltar 1 dia ou menos (último dia)
+                if (diasRestantes <= 1 && diasRestantes >= 0) {
+                    setTimeout(() => {
+                        document.getElementById('promoOverlay').classList.add('show');
+                        document.getElementById('promoBanner').classList.add('show');
+                    }, 3000); // delay de 3 segundos para não ser intrusivo
+                }
+            }
+        }
+
+        function fecharPromoBanner() {
+            document.getElementById('promoOverlay').classList.remove('show');
+            document.getElementById('promoBanner').classList.remove('show');
+        }
+
+        // CHAVES DE LICENÇA
         const LICENCA_MENSAL_KEY = "TOPFESTA-MENSAL-2024-X7K9";
         const LICENCA_SEMESTRAL_KEY = "TOPFESTA-SEMESTRAL-2024-W8H4";
         const LICENCA_ANUAL_KEY = "TOPFESTA-ANUAL-2024-Y5L2";
@@ -654,23 +427,11 @@
         function carregarServicos() { const saved = localStorage.getItem(STORAGE_SERVICOS_KEY); if (saved) listaServicosCadastrados = JSON.parse(saved); atualizarSelectServicos(); }
         function atualizarSelectServicos() {
             const selects = ['selectNovoServico', 'editSelectNovoServico', 'tipoServico'];
-            selects.forEach(id => {
-                const s = document.getElementById(id);
-                if (s) { s.innerHTML = '<option value="">Selecione</option>'; listaServicosCadastrados.forEach(serv => s.innerHTML += `<option value="${serv}">${serv}</option>`); }
-            });
+            selects.forEach(id => { const s = document.getElementById(id); if (s) { s.innerHTML = '<option value="">Selecione</option>'; listaServicosCadastrados.forEach(serv => s.innerHTML += `<option value="${serv}">${serv}</option>`); } });
             const listaDiv = document.getElementById('listaServicosCadastrados');
             if (listaDiv) listaDiv.innerHTML = listaServicosCadastrados.map(s => `<span class="servico-item">${s} <button onclick="removerServicoCadastrado('${s}')" style="background:none; border:none; color:#e74c3c; cursor:pointer;">✕</button></span>`).join('');
         }
-        function adicionarNovoServico() {
-            const novoServico = document.getElementById('novoServicoNome').value.trim();
-            if (novoServico && !listaServicosCadastrados.includes(novoServico)) {
-                listaServicosCadastrados.push(novoServico);
-                salvarServicos();
-                document.getElementById('novoServicoNome').value = '';
-                mostrarAlerta(`✅ Serviço "${novoServico}" adicionado!`, "success");
-            } else if (listaServicosCadastrados.includes(novoServico)) mostrarAlerta("❌ Serviço já cadastrado!", "error");
-            else mostrarAlerta("❌ Digite um nome de serviço!", "error");
-        }
+        function adicionarNovoServico() { const novoServico = document.getElementById('novoServicoNome').value.trim(); if (novoServico && !listaServicosCadastrados.includes(novoServico)) { listaServicosCadastrados.push(novoServico); salvarServicos(); document.getElementById('novoServicoNome').value = ''; mostrarAlerta(`✅ Serviço "${novoServico}" adicionado!`, "success"); } else if (listaServicosCadastrados.includes(novoServico)) mostrarAlerta("❌ Serviço já cadastrado!", "error"); else mostrarAlerta("❌ Digite um nome de serviço!", "error"); }
         function removerServicoCadastrado(servico) { if (confirm(`Remover "${servico}"?`)) { listaServicosCadastrados = listaServicosCadastrados.filter(s => s !== servico); salvarServicos(); mostrarAlerta("✅ Serviço removido!", "success"); } }
 
         function abrirGPS(e,c,est) { window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${e}, ${c} - ${est}, Brasil`)}`, '_blank'); }
@@ -730,7 +491,7 @@
         function fazerLogin() { if (!verificarAcesso()) { document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('licenseOverlay').style.display = 'flex'; return; } const user = document.getElementById('loginUser').value; const pass = document.getElementById('loginPass').value; if (verificarCredenciais(user, pass)) { document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('mainContent').classList.add('visible'); iniciarTimer(); carregarPerfil(); carregarServicos(); initSistema(); showContent('listaEventos'); } else { document.getElementById('loginError').style.display = 'block'; document.getElementById('loginPass').value = ''; } }
         function fazerLogout() { pararTimer(); document.getElementById('loginOverlay').style.display = 'flex'; document.getElementById('mainContent').classList.remove('visible'); document.getElementById('licenseOverlay').style.display = 'none'; document.getElementById('loginUser').value = ''; document.getElementById('loginPass').value = ''; atualizarTimer(); }
         document.addEventListener('keypress', e => { if (e.key === 'Enter') { if (document.getElementById('firstAccessOverlay').style.display === 'flex') cadastrarPrimeiroAcesso(); else if (document.getElementById('loginOverlay').style.display === 'flex') fazerLogin(); } });
-        if (isFirstAccess()) { document.getElementById('firstAccessOverlay').style.display = 'flex'; } else { document.getElementById('loginOverlay').style.display = 'flex'; if (!verificarAcesso()) { document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('licenseOverlay').style.display = 'flex'; } }
+        if (isFirstAccess()) { document.getElementById('firstAccessOverlay').style.display = 'flex'; } else { document.getElementById('loginOverlay').style.display = 'flex'; if (!verificarAcesso()) { document.getElementById('loginOverlay').style.display = 'none'; document.getElementById('licenseOverlay').style.display = 'flex'; } else { mostrarPromoSeUltimoDia(); } }
 
         function carregarPerfil() { const saved = localStorage.getItem(STORAGE_PERFIL_KEY); if (saved) perfilAnimador = JSON.parse(saved); else perfilAnimador = { nomeArtistico: "", whatsapp: "", email: "", cidade: "", estado: "", instagram: "" }; atualizarInterfacePerfil(); }
         function salvarPerfil() { localStorage.setItem(STORAGE_PERFIL_KEY, JSON.stringify(perfilAnimador)); atualizarInterfacePerfil(); }
@@ -790,13 +551,7 @@
             if(!futuros.length){ document.getElementById('agendaProximosMeses').innerHTML='<div class="empty-agenda">🎉 Nenhum evento nos próximos 3 meses.</div>'; return; }
             let html='<div class="agenda-grid">'; 
             futuros.forEach(e=>{ const dias=Math.ceil((new Date(e.data_evento)-new Date())/(86400000)); 
-                html+=`<div class="agenda-card"><div class="agenda-header">🎪 ${formatarData(e.data_evento)} (${dias} dias)</div><div class="agenda-body">
-                    <div class="agenda-date">🎉 ${e.nome_evento}</div><div>⏰ ${e.hora_evento} - ${e.qtd_horas}h</div><div>👤 ${e.cliente.nome}</div>
-                    <div>📋 Fornecedor: ${e.fornecedor||'-'}</div>
-                    <div>📍 ${e.endereco_evento}, ${e.cidade_evento}</div>
-                    <div><span class="agenda-badge badge-${e.status==='Confirmado'?'confirmado':'agendado'}">${e.status}</span></div>
-                    <div><button onclick="abrirModalEditEvento(${e.id})" style="background:#FF69B4;color:white;border:none;padding:4px 12px;border-radius:20px;margin-top:8px;">✏️ Editar</button> <button onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')" style="background:#e74c3c;color:white;border:none;padding:4px 12px;border-radius:20px;">🗑️ Excluir</button></div>
-                </div></div>`; }); 
+                html+=`<div class="agenda-card"><div class="agenda-header">🎪 ${formatarData(e.data_evento)} (${dias} dias)</div><div class="agenda-body"><div class="agenda-date">🎉 ${e.nome_evento}</div><div>⏰ ${e.hora_evento} - ${e.qtd_horas}h</div><div>👤 ${e.cliente.nome}</div><div>📋 Fornecedor: ${e.fornecedor||'-'}</div><div>📍 ${e.endereco_evento}, ${e.cidade_evento}</div><div><span class="agenda-badge badge-${e.status==='Confirmado'?'confirmado':'agendado'}">${e.status}</span></div><div><button onclick="abrirModalEditEvento(${e.id})" style="background:#FF69B4;color:white;border:none;padding:4px 12px;border-radius:20px;margin-top:8px;">✏️ Editar</button> <button onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')" style="background:#e74c3c;color:white;border:none;padding:4px 12px;border-radius:20px;">🗑️ Excluir</button></div></div></div>`; }); 
             html+='</div>'; document.getElementById('agendaProximosMeses').innerHTML=html;
         }
         
@@ -805,7 +560,7 @@
         
         function cadastrarCliente(e){ e.preventDefault(); const c={id:proximoIdCliente++, nome:document.getElementById('nomeCliente').value.toUpperCase(), cpf_cnpj:document.getElementById('cpfCliente').value, telefone:document.getElementById('telefoneCliente').value, email:document.getElementById('emailCliente').value, endereco:document.getElementById('enderecoCliente').value, cidade:document.getElementById('cidadeCliente').value.toUpperCase(), estado:document.getElementById('estadoCliente').value.toUpperCase()}; clientes.push(c); salvarDados(); atualizarSelectClientes(); mostrarAlerta(`✅ Cliente cadastrado!`,"success"); document.getElementById('formCliente').reset();}
         
-        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n不错\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td>}.${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n</table>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
+        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n不错\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td><td>${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n</table>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
         function verDetalhesCliente(id){ const c=clientes.find(c=>c.id===id); alert(`🎉 CLIENTE\n\n${c.nome}\nCPF: ${c.cpf_cnpj}\nTel: ${c.telefone}\nEmail: ${c.email}\nEndereço: ${c.endereco}\n${c.cidade}/${c.estado}`); }
         
         function cadastrarEvento(e){ e.preventDefault(); const cid=parseInt(document.getElementById('clienteEvento').value); const cl=clientes.find(c=>c.id===cid); if(!cl){mostrarAlerta("❌ Selecione um cliente!","error"); return;} const tipoServico = document.getElementById('tipoServico').value; if(!tipoServico){mostrarAlerta("❌ Selecione o tipo de serviço!","error"); return;} const fornecedor = document.getElementById('fornecedorEvento').value.trim(); if(!fornecedor){mostrarAlerta("❌ Informe o fornecedor!","error"); return;} const ev={id:proximoIdEvento++, nome_evento:document.getElementById('nomeEvento').value.toUpperCase(), cliente:cl, fornecedor:fornecedor, tipo_servico:tipoServico, servicos:servicosSelecionados.join(', '), endereco_evento:document.getElementById('enderecoEvento').value, cidade_evento:document.getElementById('cidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('estadoEvento').value.toUpperCase(), tema_festa:document.getElementById('temaFesta').value, faixa_etaria:document.getElementById('faixaEtaria').value, data_evento:document.getElementById('dataEvento').value, hora_evento:document.getElementById('horaEvento').value, qtd_pessoas:parseInt(document.getElementById('qtdPessoas').value)||0, qtd_horas:parseFloat(document.getElementById('qtdHoras').value), valor:parseFloat(document.getElementById('valorServico').value), telefone_contato:document.getElementById('telefoneContato').value, observacoes:document.getElementById('observacoes').value, status:"Agendado"}; eventos.push(ev); salvarDados(); mostrarAlerta(`✅ Evento cadastrado!`,"success"); document.getElementById('formEvento').reset(); servicosSelecionados=[]; atualizarListaServicos();}
@@ -818,17 +573,9 @@
             let h = '<div class="table-container">\n不错\n<thead>\n<tr><th>Evento</th><th>Cliente</th><th>Fornecedor</th><th>Tipo Serviço</th><th>Data/Hora</th><th>Local</th><th>Valor</th><th>Status</th><th>GPS</th><th>Ações</th></tr>\n</thead>\n<tbody>';
             evs.forEach(e => {
                 const statusClass = e.status === 'Confirmado' ? 'status-confirmado' : (e.status === 'Agendado' ? 'status-agendado' : (e.status === 'Em andamento' ? 'status-andamento' : (e.status === 'Concluído' ? 'status-concluido' : 'status-cancelado')));
-                h += `<tr>
-                    <td><strong>${e.nome_evento}</strong>${e.tema_festa ? `<br><small>🎨 ${e.tema_festa}</small>` : ''}</td>
-                    <td>${e.cliente.nome}</td>
-                    <td><small>${e.fornecedor || '-'}</small></td>
-                    <td><small>${e.tipo_servico || '-'}</small>${e.servicos ? `<br><small>+ ${e.servicos}</small>` : ''}</td>
-                    <td>${formatarData(e.data_evento)}<br>${e.hora_evento}</td>
-                    <td><small>${e.endereco_evento.substring(0,25)}${e.endereco_evento.length > 25 ? '...' : ''}</small><br>${e.cidade_evento}/${e.estado_evento}</td>
-                    <td><strong>R$ ${(e.valor || 0).toFixed(2)}</strong></td>
-                    <td><span class="status-badge ${statusClass}">${e.status}</span></td>
-                    <td class="table-actions"><button class="btn-small btn-gps" onclick="abrirGPS('${e.endereco_evento.replace(/'/g, "\\'")}', '${e.cidade_evento}', '${e.estado_evento}')">🗺️ Maps</button><button class="btn-small btn-waze" onclick="abrirWaze('${e.endereco_evento.replace(/'/g, "\\'")}', '${e.cidade_evento}', '${e.estado_evento}')">🧭 Waze</button></td>
-                    <td class="table-actions"><button class="btn-small btn-ver" onclick="verDetalhesEvento(${e.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditEvento(${e.id})">Editar</button> <button class="btn-small btn-status" onclick="atualizarStatus(${e.id})">Status</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')">Excluir</button></td>
+                h += `<tr><td><strong>${e.nome_evento}</strong>${e.tema_festa ? `<br><small>🎨 ${e.tema_festa}</small>` : ''}</td><td>${e.cliente.nome}</td><td><small>${e.fornecedor || '-'}</small></td><td><small>${e.tipo_servico || '-'}</small>${e.servicos ? `<br><small>+ ${e.servicos}</small>` : ''}</td><td>${formatarData(e.data_evento)}<br>${e.hora_evento}</td><td><small>${e.endereco_evento.substring(0,25)}${e.endereco_evento.length > 25 ? '...' : ''}</small><br>${e.cidade_evento}/${e.estado_evento}</td><td><strong>R$ ${(e.valor || 0).toFixed(2)}</strong></td><td><span class="status-badge ${statusClass}">${e.status}</span></td>
+                <td class="table-actions"><button class="btn-small btn-gps" onclick="abrirGPS('${e.endereco_evento.replace(/'/g, "\\'")}', '${e.cidade_evento}', '${e.estado_evento}')">🗺️ Maps</button><button class="btn-small btn-waze" onclick="abrirWaze('${e.endereco_evento.replace(/'/g, "\\'")}', '${e.cidade_evento}', '${e.estado_evento}')">🧭 Waze</button></td>
+                <td class="table-actions"><button class="btn-small btn-ver" onclick="verDetalhesEvento(${e.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditEvento(${e.id})">Editar</button> <button class="btn-small btn-status" onclick="atualizarStatus(${e.id})">Status</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')">Excluir</button></td>
                 </tr>`;
             });
             h += '</tbody>\n</table>\n</div>';
@@ -836,7 +583,6 @@
         }
         
         function verDetalhesEvento(id){ const e=eventos.find(e=>e.id===id); alert(`🎪 EVENTO\n\n${e.nome_evento}\nCliente: ${e.cliente.nome}\nFornecedor: ${e.fornecedor||'-'}\nData: ${formatarData(e.data_evento)} ${e.hora_evento}\nValor: R$ ${(e.valor||0).toFixed(2)}\nStatus: ${e.status}`); }
-        
         function atualizarStatus(id){ const e=eventos.find(e=>e.id===id); const op=prompt(`Status: ${e.status}\n1-Agendado 2-Confirmado 3-Em andamento 4-Concluído 5-Cancelado`); const sts=["Agendado","Confirmado","Em andamento","Concluído","Cancelado"]; if(op&&op>=1&&op<=5){ e.status=sts[parseInt(op)-1]; salvarDados(); listarEventos(); atualizarAgenda(); mostrarAlerta("✅ Status atualizado!","success"); } }
         function carregarDadosContrato(){ const id=parseInt(document.getElementById('selectEventoContrato').value); if(id){ contratoAtual=eventos.find(e=>e.id===id); gerarContratoHTML(contratoAtual); } else document.getElementById('contratoPreview').innerHTML=''; }
         function mostrarEstatisticas(){ const total=eventos.reduce((s,e)=>s+(e.valor||0),0); document.getElementById('estatisticasContent').innerHTML=`<div class="stats-grid"><div class="stat-card"><div class="stat-number">${clientes.length}</div><div class="stat-label">Clientes</div></div><div class="stat-card"><div class="stat-number">${eventos.length}</div><div class="stat-label">Eventos</div></div><div class="stat-card"><div class="stat-number">R$ ${total.toFixed(2)}</div><div class="stat-label">Faturamento</div></div></div>`; }

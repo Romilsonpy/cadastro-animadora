@@ -8,7 +8,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Top Agenda Festa">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Top Agenda Festa - Sistema de Gestão de Eventos</title>
     <link rel="manifest" href="data:application/manifest+json,{
         \"name\": \"Top Agenda Festa - Sistema para Fornecedores de Eventos\",
         \"short_name\": \"Top Agenda Festa\",
@@ -32,7 +31,7 @@
                 \"purpose\": \"any maskable\"
             },
             {
-                \"src\": \"data:image/png;base64,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\",
+                \"src\": \"data:image/png;base64,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\",
                 \"sizes\": \"512x512\",
                 \"type\": \"image/png\",
                 \"purpose\": \"any maskable\"
@@ -61,7 +60,7 @@
             padding: 20px;
         }
 
-        /* Banner de instalação do App - Automático */
+        /* Banner de instalação do App */
         .install-prompt {
             position: fixed;
             bottom: 20px;
@@ -84,7 +83,7 @@
         .install-text { color: white; font-size: 14px; font-weight: bold; flex: 1; }
         .install-text strong { display: block; font-size: 16px; margin-bottom: 5px; }
         .install-btn { background: #FFD700; color: #9B59B6; border: none; padding: 10px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; }
-        .close-install { background: rgba(255,255,255,0.3); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 18px; }
+        .close-install { background: rgba(255,255,255,0.3); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
 
         .first-access-overlay, .login-overlay, .license-overlay {
             position: fixed;
@@ -213,6 +212,22 @@
         .content.active { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Estilos do Tutorial - incluindo o Resumo do Programa */
+        .tutorial-step { background: #FFF9F9; border-radius: 20px; padding: 20px; margin-bottom: 20px; border-left: 5px solid var(--primary-pink); }
+        .tutorial-step h3 { color: var(--primary-pink); margin-bottom: 10px; font-size: 18px; }
+        .tutorial-step p { color: #555; line-height: 1.6; margin-bottom: 10px; }
+        .tutorial-step ul { margin-left: 20px; color: #555; }
+        .tutorial-step li { margin: 8px 0; }
+        .tutorial-icon { font-size: 24px; margin-right: 10px; vertical-align: middle; }
+        .resumo-box { background: linear-gradient(135deg, #FFF0F5, #FFE4E1); border: 2px solid var(--primary-pink); border-radius: 20px; padding: 20px; margin: 20px 0; }
+        .resumo-box h3 { color: var(--primary-pink); text-align: center; margin-bottom: 15px; font-size: 20px; }
+        .resumo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .resumo-item { background: white; border-radius: 15px; padding: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .resumo-item .emoji { font-size: 28px; display: block; margin-bottom: 5px; }
+        .resumo-item strong { color: var(--primary-pink); }
+        .contato-rapido { background: #25D366; color: white; padding: 15px; border-radius: 50px; text-align: center; margin-top: 20px; }
+        .contato-rapido a { color: white; text-decoration: none; font-weight: bold; }
+
         .form-group { margin-bottom: 20px; }
         .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-purple); }
@@ -245,6 +260,9 @@
         .status-concluido { background: #95A5A6; color: white; }
         .status-cancelado { background: #e74c3c; color: white; }
 
+        .servicos-cadastrados { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .servico-item { background: #FFE4E1; padding: 5px 12px; border-radius: 20px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
+
         .contrato-paper { background: white; max-width: 210mm; margin: 0 auto; padding: 25px; border: 2px dashed var(--primary-pink); border-radius: 20px; }
         .payment-note { background: #FFF9F9; border-left: 4px solid var(--primary-yellow); padding: 12px; margin: 20px 0; border-radius: 15px; }
         .clausula-especifica { background: #F0F8FF; border-left: 4px solid #FF69B4; padding: 12px; margin: 10px 0; border-radius: 10px; }
@@ -266,6 +284,17 @@
 
         .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; }
         .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; background: rgba(255,255,255,0.8); border-radius: 30px; margin-top: 10px; }
+        .maintenance-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .maintenance-card { background: #FFF9F9; border-radius: 20px; padding: 20px; text-align: center; border: 2px solid var(--primary-yellow); }
+        .file-input { margin-bottom: 15px; padding: 10px; border: 2px dashed #FF69B4; border-radius: 20px; }
+
+        .servicos-container { border: 2px solid #FFE4E1; border-radius: 20px; padding: 15px; background: #FFF9F9; }
+        .servicos-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+        .servicos-lista { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .servico-tag { background: linear-gradient(135deg, #FF69B4, #9B59B6); color: white; padding: 5px 15px; border-radius: 50px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
+        .remove-servico { cursor: pointer; background: rgba(255,255,255,0.3); width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .remove-servico:hover { background: #e74c3c; }
+        .btn-add-servico { background: linear-gradient(135deg, #2ECC71, #27AE60); color: white; border: none; padding: 8px 20px; border-radius: 50px; cursor: pointer; }
 
         @media (max-width: 768px) {
             .menu-buttons { grid-template-columns: repeat(2, 1fr); }
@@ -276,6 +305,7 @@
             .table-actions { flex-direction: column; gap: 5px; }
             .btn-small { width: 100%; text-align: center; }
             .install-prompt { flex-direction: column; text-align: center; border-radius: 30px; }
+            .resumo-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -411,7 +441,46 @@
                 <div id="listaServicosCadastrados" class="servicos-cadastrados"></div>
             </div>
 
-            <div id="ajuda" class="content"><h2>📖 Tutorial</h2><div class="tutorial-step"><h3>1️⃣ Primeiro Acesso</h3><p>Crie seu usuário e senha.</p></div><div class="tutorial-step"><h3>2️⃣ Configure seu Perfil</h3><p>Adicione nome artístico, contato e logo.</p></div><div class="tutorial-step"><h3>3️⃣ Cadastre Clientes e Eventos</h3><p>Gerencie tudo em um só lugar!</p></div><div class="tutorial-step"><h3>4️⃣ Gere Contratos</h3><p>Contratos profissionais com seu logo e cláusulas específicas.</p></div></div>
+            <!-- TUTORIAL COM RESUMO DO PROGRAMA -->
+            <div id="ajuda" class="content">
+                <h2>📖 Ajuda / Tutorial</h2>
+                
+                <!-- RESUMO DO PROGRAMA - DESTAQUE -->
+                <div class="resumo-box">
+                    <h3>🎯 RESUMO DO PROGRAMA - TOP AGENDA FESTA</h3>
+                    <p style="text-align:center; margin-bottom:15px;">Sistema completo para organizar clientes, eventos, contratos e finanças - feito sob medida para fornecedores de festas e eventos infantis.</p>
+                    
+                    <div class="resumo-grid">
+                        <div class="resumo-item"><span class="emoji">🔐</span><strong>Login/Senha</strong><br>Primeiro acesso cadastra usuário e senha personalizados</div>
+                        <div class="resumo-item"><span class="emoji">👤</span><strong>Perfil do Fornecedor</strong><br>Nome artístico, WhatsApp, email, cidade, estado, Instagram e upload de logo (JPEG)</div>
+                        <div class="resumo-item"><span class="emoji">📝</span><strong>Cadastro de Clientes</strong><br>Nome, CPF/CNPJ, telefone, email, endereço, cidade/UF</div>
+                        <div class="resumo-item"><span class="emoji">🎯</span><strong>Cadastro de Eventos</strong><br>Nome da festa, fornecedor contratado, tipo de serviço, serviços adicionais, data, horário, local, tema, faixa etária, quantidade de pessoas, horas contratadas e valor</div>
+                        <div class="resumo-item"><span class="emoji">🛠️</span><strong>Meus Serviços</strong><br>Permite cadastrar novos serviços (Garçons, DJ, Fotógrafo, Decoração, Buffet, Fritadeira, etc.) - totalmente personalizável</div>
+                        <div class="resumo-item"><span class="emoji">📅</span><strong>Agenda Visual</strong><br>Exibe os eventos dos próximos 3 meses em cards coloridos com todas as informações</div>
+                        <div class="resumo-item"><span class="emoji">🗺️</span><strong>GPS Integrado</strong><br>Botões para Google Maps e Waze - navega direto para o endereço do evento</div>
+                        <div class="resumo-item"><span class="emoji">📄</span><strong>Contrato Profissional</strong><br>Gera contrato automático com logo do fornecedor, cláusulas específicas por tipo de serviço e forma de pagamento (50% na assinatura + 50% na chegada)</div>
+                        <div class="resumo-item"><span class="emoji">📸</span><strong>Contrato em JPEG</strong><br>Baixa o contrato como imagem para enviar por WhatsApp</div>
+                        <div class="resumo-item"><span class="emoji">📊</span><strong>Estatísticas</strong><br>Total de clientes, total de eventos e faturamento total</div>
+                        <div class="resumo-item"><span class="emoji">🔧</span><strong>Manutenção</strong><br>Limpar dados, fazer backup (JSON), restaurar backup, alterar senha</div>
+                        <div class="resumo-item"><span class="emoji">📱</span><strong>PWA - Instalação no Celular</strong><br>Pode ser instalado como aplicativo na tela inicial do celular</div>
+                        <div class="resumo-item"><span class="emoji">💰</span><strong>Sistema de Licenças</strong><br>Teste grátis de 7 dias, depois planos: Mensal R$25 | Semestral R$100 | Anual R$150</div>
+                    </div>
+                    
+                    <div class="contato-rapido">
+                        📞 <strong>Contato para Licenças:</strong> WhatsApp (71) 98290-5513 | Email: dj.romilson@hotmail.com
+                    </div>
+                </div>
+
+                <div class="tutorial-step"><h3><span class="tutorial-icon">1️⃣</span> Primeiro Acesso</h3><p>Crie seu usuário e senha para começar.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">2️⃣</span> Configurar Perfil</h3><p>Preencha seus dados profissionais e faça upload da sua logo.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">3️⃣</span> Cadastrar Clientes</h3><p>Adicione todos os seus clientes com seus dados de contato.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">4️⃣</span> Cadastrar Eventos</h3><p>Informe cliente, nome da festa, <strong>fornecedor contratado</strong>, tipo de serviço, data, horário e valor.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">5️⃣</span> Visualizar Agenda</h3><p>Acompanhe os próximos eventos nos cards da página inicial.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">6️⃣</span> Gerenciar Eventos</h3><p>Altere status, edite ou exclua eventos pela lista.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">7️⃣</span> Gerar Contrato</h3><p>Contrato profissional com cláusulas específicas por tipo de serviço.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">8️⃣</span> Backup e Manutenção</h3><p>Faça backup dos dados ou restaure quando necessário.</p></div>
+                <div class="tutorial-step"><h3><span class="tutorial-icon">📱</span> Instalar como App</h3><p>No celular, clique em "Instalar App" para usar como aplicativo.</p></div>
+            </div>
 
             <div id="listaClientes" class="content"><h2>👥 Lista de Clientes</h2><div id="clientesList"></div></div>
             <div id="listaEventos" class="content"><h2>🎪 Lista de Eventos</h2><div class="form-group"><select id="filtroStatus" onchange="filtrarEventos()" style="max-width:200px;"><option value="todos">Todos</option><option value="Agendado">Agendado</option><option value="Confirmado">Confirmado</option><option value="Em andamento">Em andamento</option><option value="Concluído">Concluído</option><option value="Cancelado">Cancelado</option></select></div><div id="eventosList"></div></div>
@@ -436,48 +505,16 @@
         const installBtn = document.getElementById('installAppBtn');
         const closeInstallBtn = document.getElementById('closeInstallBtn');
 
-        // Detectar se o navegador suporta instalação PWA
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            // Mostrar banner apenas se não estiver em modo app standalone
             if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
                 installBanner.classList.add('show');
             }
         });
-
-        // Evento de instalação
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('App instalado com sucesso!');
-                    installBanner.classList.remove('show');
-                }
-                deferredPrompt = null;
-            }
-        });
-
-        // Fechar banner
-        closeInstallBtn.addEventListener('click', () => {
-            installBanner.classList.remove('show');
-        });
-
-        // Verificar se já está instalado e esconder banner
-        if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
-            installBanner.style.display = 'none';
-        }
-
-        // Tentar instalação automática (solicitação após carregar)
-        setTimeout(() => {
-            if (deferredPrompt && !window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
-                // Pequeno delay para não ser intrusivo
-                if (installBanner.classList.contains('show')) {
-                    // Já mostrando o banner, não precisa fazer nada
-                }
-            }
-        }, 3000);
+        installBtn.addEventListener('click', async () => { if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') installBanner.classList.remove('show'); deferredPrompt = null; } });
+        closeInstallBtn.addEventListener('click', () => { installBanner.classList.remove('show'); });
+        if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) installBanner.style.display = 'none';
 
         // CHAVES DE LICENÇA
         const LICENCA_MENSAL_KEY = "TOPFESTA-MENSAL-2024-X7K9";
@@ -629,7 +666,7 @@
             document.getElementById('contratoPreview').innerHTML = `<div class="contrato-container"><div id="contratoParaImprimir" class="contrato-paper"><div style="text-align:center;">${logo?`<img src="${logo}" style="width:60px;border-radius:50%;">`:''}<div style="font-size:22px;color:#FF69B4;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div><div>${perfilAnimador.nomeArtistico||'Top Agenda Festa'}</div></div>
             <div class="payment-note">⚠️ PAGAMENTO: <strong>50% na assinatura + 50% na chegada</strong></div>
             <div><strong>CONTRATANTE:</strong> ${cli.nome}<br><strong>CPF:</strong> ${cli.cpf_cnpj}<br><strong>Telefone:</strong> ${cli.telefone}<br><strong>Email:</strong> ${cli.email}<br><strong>Endereço:</strong> ${cli.endereco}, ${cli.cidade}/${cli.estado}</div>
-            <div style="margin-top:15px;"><strong>CONTRATADO:</strong> ${e.fornecedor || 'Não informado'}</div>
+            <div style="margin-top:15px;"><strong>CONTRATADO (FORNECEDOR):</strong> ${e.fornecedor || 'Não informado'}</div>
             <div><strong>EVENTO:</strong> ${e.nome_evento}<br><strong>Tipo de Serviço:</strong> ${e.tipo_servico}<br><strong>Serviços Adicionais:</strong> ${e.servicos||'Nenhum'}<br><strong>Data:</strong> ${dataEvento} às ${e.hora_evento}<br><strong>Local:</strong> ${e.endereco_evento}, ${e.cidade_evento}/${e.estado_evento}<br><strong>Duração:</strong> ${e.qtd_horas}h | <strong>Pessoas:</strong> ${e.qtd_pessoas||0}</div>
             <div style="background:#FFF0F5;padding:12px;"><strong>💰 VALOR TOTAL:</strong> R$ ${val.toFixed(2)}<br>Entrada (50%): R$ ${entrada.toFixed(2)}<br>Saldo (50% na chegada): R$ ${restante.toFixed(2)}</div>
             <div><strong>📋 CLÁUSULAS:</strong><br><strong>1ª - DO OBJETO:</strong> Prestação do serviço conforme descrito.<br><strong>2ª - OBRIGAÇÕES:</strong> Executar com profissionalismo e pontualidade.<br>${clausulas}<br><strong>3ª - CANCELAMENTO:</strong> Sem reembolso, apenas remarcação em 90 dias.<br><strong>4ª - ATRASO:</strong> Aguarda 15 minutos sem custos.<br><strong>5ª - FORO:</strong> Comarca de ${perfilAnimador.cidade||'Salvador'}.</div>
@@ -666,7 +703,7 @@
         
         function cadastrarCliente(e){ e.preventDefault(); const c={id:proximoIdCliente++, nome:document.getElementById('nomeCliente').value.toUpperCase(), cpf_cnpj:document.getElementById('cpfCliente').value, telefone:document.getElementById('telefoneCliente').value, email:document.getElementById('emailCliente').value, endereco:document.getElementById('enderecoCliente').value, cidade:document.getElementById('cidadeCliente').value.toUpperCase(), estado:document.getElementById('estadoCliente').value.toUpperCase()}; clientes.push(c); salvarDados(); atualizarSelectClientes(); mostrarAlerta(`✅ Cliente cadastrado!`,"success"); document.getElementById('formCliente').reset();}
         
-        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n不错\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td><td>${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n</table>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
+        function listarClientes(){ if(!clientes.length){document.getElementById('clientesList').innerHTML='<p>❌ Nenhum cliente.</p>'; return;} let h='<div class="table-container">\n<table>\n<thead>\n<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Cidade</th><th>Ações</th></tr>\n</thead>\n<tbody>'; clientes.forEach(c=>{h+=`<tr><td>${c.id}</td><td>${c.nome}${eventos.filter(e=>e.cliente.id===c.id).length?`<br><small>📅 ${eventos.filter(e=>e.cliente.id===c.id).length} evento(s)</small>`:''}</td><td>${c.telefone}</td><td>${c.email}</td><td>${c.cidade}</td><td><button class="btn-small btn-ver" onclick="verDetalhesCliente(${c.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditCliente(${c.id})">Editar</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoCliente(${c.id},'${c.nome}')">Excluir</button></td></tr>`;}); h+='</tbody>\n</tr>\n</div>'; document.getElementById('clientesList').innerHTML=h;}
         function verDetalhesCliente(id){ const c=clientes.find(c=>c.id===id); alert(`🎉 CLIENTE\n\n${c.nome}\nCPF: ${c.cpf_cnpj}\nTel: ${c.telefone}\nEmail: ${c.email}\nEndereço: ${c.endereco}\n${c.cidade}/${c.estado}`); }
         
         function cadastrarEvento(e){ e.preventDefault(); const cid=parseInt(document.getElementById('clienteEvento').value); const cl=clientes.find(c=>c.id===cid); if(!cl){mostrarAlerta("❌ Selecione um cliente!","error"); return;} const tipoServico = document.getElementById('tipoServico').value; if(!tipoServico){mostrarAlerta("❌ Selecione o tipo de serviço!","error"); return;} const fornecedor = document.getElementById('fornecedorEvento').value.trim(); if(!fornecedor){mostrarAlerta("❌ Informe o fornecedor!","error"); return;} const ev={id:proximoIdEvento++, nome_evento:document.getElementById('nomeEvento').value.toUpperCase(), cliente:cl, fornecedor:fornecedor, tipo_servico:tipoServico, servicos:servicosSelecionados.join(', '), endereco_evento:document.getElementById('enderecoEvento').value, cidade_evento:document.getElementById('cidadeEvento').value.toUpperCase(), estado_evento:document.getElementById('estadoEvento').value.toUpperCase(), tema_festa:document.getElementById('temaFesta').value, faixa_etaria:document.getElementById('faixaEtaria').value, data_evento:document.getElementById('dataEvento').value, hora_evento:document.getElementById('horaEvento').value, qtd_pessoas:parseInt(document.getElementById('qtdPessoas').value)||0, qtd_horas:parseFloat(document.getElementById('qtdHoras').value), valor:parseFloat(document.getElementById('valorServico').value), telefone_contato:document.getElementById('telefoneContato').value, observacoes:document.getElementById('observacoes').value, status:"Agendado"}; eventos.push(ev); salvarDados(); mostrarAlerta(`✅ Evento cadastrado!`,"success"); document.getElementById('formEvento').reset(); servicosSelecionados=[]; atualizarListaServicos();}
@@ -692,7 +729,7 @@
                     <td class="table-actions"><button class="btn-small btn-ver" onclick="verDetalhesEvento(${e.id})">Ver</button> <button class="btn-small btn-editar" onclick="abrirModalEditEvento(${e.id})">Editar</button> <button class="btn-small btn-status" onclick="atualizarStatus(${e.id})">Status</button> <button class="btn-small btn-excluir" onclick="confirmarExclusaoEvento(${e.id},'${e.nome_evento}')">Excluir</button></td>
                 </tr>`;
             });
-            h += '</tbody></table></div>';
+            h += '</tbody>\n</table>\n</div>';
             document.getElementById('eventosList').innerHTML = h;
         }
         

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animadora Infantil - Sistema de Eventos</title>
+    <title>Faça a sua Festa - Sistema de Agendamento</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -149,7 +149,19 @@
         .logout-btn:hover { background: var(--primary-pink); transform: scale(1.05); }
         .logo-container { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .logo-placeholder { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-yellow), #FFA500); display: flex; align-items: center; justify-content: center; font-size: 40px; border: 3px solid white; }
-        .logo-text h1 { font-size: 2.2em; background: linear-gradient(135deg, #FFD700, #FFA500, #FF69B4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-text h1 { 
+            font-size: 2.2em; 
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF69B4); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-text .subtitle {
+            color: #FFD700;
+            font-size: 14px;
+            -webkit-text-fill-color: #FFD700;
+            letter-spacing: 2px;
+        }
         .perfil-info { margin-top: 10px; padding: 10px 20px; background: rgba(255,255,255,0.25); border-radius: 50px; display: inline-flex; flex-wrap: wrap; gap: 15px; backdrop-filter: blur(5px); }
         .perfil-info span { color: white; font-size: 14px; font-weight: bold; }
         .balloon-animation { display: flex; gap: 5px; margin-top: 15px; justify-content: center; }
@@ -264,7 +276,6 @@
             border: 2px solid white;
         }
 
-        /* Catálogo de Serviços */
         .catalogo-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
         .servico-catalogo-card { background: #FFF9F9; border-radius: 20px; padding: 15px; border: 2px solid #FFE4E1; text-align: center; cursor: pointer; transition: all 0.3s ease; }
         .servico-catalogo-card:hover { transform: scale(1.02); border-color: var(--primary-pink); }
@@ -272,6 +283,14 @@
         .servico-catalogo-card .icone { font-size: 2em; }
         .servico-catalogo-card .nome { font-weight: bold; margin: 5px 0; }
         .servico-catalogo-card .desc { font-size: 11px; color: #888; }
+
+        .app-name-header {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
 
         @media (max-width: 768px) {
             .menu-buttons { grid-template-columns: 1fr; }
@@ -291,14 +310,14 @@
     <!-- Tela de Primeiro Acesso -->
     <div id="firstAccessOverlay" class="first-access-overlay">
         <div class="first-access-box">
-            <div class="logo-icon">🎈🐶</div>
-            <h2>🎉 Bem-vindo ao Sistema! 🎉</h2>
+            <div class="logo-icon">🎉🎈</div>
+            <h2>🎉 Bem-vindo ao <span style="color:#FFD700;">Faça a sua Festa</span>! 🎉</h2>
             <p>Primeiro acesso - Cadastre seu usuário e senha</p>
             <input type="text" id="newUsername" class="first-input" placeholder="Nome de usuário">
             <input type="password" id="newPassword" class="first-input" placeholder="Senha">
             <input type="password" id="confirmPassword" class="first-input" placeholder="Confirmar senha">
             <div style="font-size:12px; color:#888; text-align:left;">🔒 Mínimo 3 caracteres</div>
-            <button class="first-btn" onclick="cadastrarPrimeiroAcesso()">🎨 Criar Acesso e Continuar 🎨</button>
+            <button class="first-btn" onclick="cadastrarPrimeiroAcesso()">🎨 Criar Acesso e Começar 🎨</button>
             <div id="firstAccessError" class="first-error"></div>
         </div>
     </div>
@@ -307,8 +326,8 @@
     <div id="loginOverlay" class="login-overlay">
         <div class="login-box">
             <div class="logo-icon">🎭🎪</div>
-            <h2>Animador(a) Infantil</h2>
-            <p>Sistema de Gerenciamento de Eventos Infantis</p>
+            <h2 style="color: var(--primary-purple);">🎉 Faça a sua Festa</h2>
+            <p>Sistema de Agendamento e Gerador de Contratos</p>
             <div style="margin: 10px 0;">
                 <span class="trial-badge">🎉 TESTE GRÁTIS</span>
             </div>
@@ -329,11 +348,11 @@
             <div class="planos-container">
                 <div class="plano-card">
                     <div class="plano-info"><div class="plano-nome">📅 Plano Mensal</div><div class="plano-preco">R$ 10,00</div><div class="plano-duracao">30 dias de acesso</div></div>
-                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Sistema%20para%20Animador(a)%20Infantil%20no%20valor%20de%20R$%2010,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
+                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Sistema%20Faça%20a%20sua%20Festa%20no%20valor%20de%20R$%2010,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
                 </div>
                 <div class="plano-card">
                     <div class="plano-info"><div class="plano-nome">🏆 Plano Anual</div><div class="plano-preco">R$ 50,00</div><div class="plano-duracao">365 dias de acesso (economize R$ 70)</div></div>
-                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Sistema%20para%20Animador(a)%20Infantil%20no%20valor%20de%20R$%2050,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
+                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Sistema%20Faça%20a%20sua%20Festa%20no%20valor%20de%20R$%2050,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
                 </div>
             </div>
             <p style="margin-top: 15px; font-size: 12px;">🔐 Após o pagamento, você receberá sua chave de ativação via WhatsApp.</p>
@@ -349,12 +368,16 @@
     <div id="mainContent" class="main-content">
         <div class="container">
             <div class="header">
-                <div class="timer-badge" id="timerBadge">⏱️ Teste: 7 dias</div>
+                <div class="timer-badge" id="timerBadge">⏱️ Teste</div>
                 <button class="logout-btn" onclick="fazerLogout()">🚪 Sair</button>
                 <div class="logo-container">
-                    <div id="logoDisplay" class="logo-placeholder">🎨</div>
-                    <div class="logo-text"><h1 id="nomeArtisticoDisplay">🎨 ANIMADOR(A) INFANTIL 🎨</h1><div class="tagline" style="color:#FFD700;">🎈 Alegria e Organização! 🎈</div></div>
-                    <div class="logo-icon">🐶🐱</div>
+                    <div id="logoDisplay" class="logo-placeholder">🎉</div>
+                    <div class="logo-text">
+                        <h1>🎉 Faça a sua Festa</h1>
+                        <div class="subtitle">📋 Sistema de Agendamento e Contratos</div>
+                        <div id="nomeArtisticoDisplay" style="font-size:16px; -webkit-text-fill-color: #FFD700; margin-top:5px;"></div>
+                    </div>
+                    <div class="logo-icon">🎈🎪</div>
                 </div>
                 <div class="perfil-info" id="perfilInfo"><span>⭐ Carregando perfil... ⭐</span></div>
                 <div class="balloon-animation"><div class="balloon"></div><div class="balloon"></div><div class="balloon"></div></div>
@@ -384,7 +407,7 @@
                     <div class="form-group"><label>Sua Logo / Foto de Perfil (JPEG)</label>
                         <div class="logo-upload"><div id="logoPreviewPerfil" class="logo-preview-placeholder">📷</div><input type="file" id="logoUpload" accept="image/jpeg, image/jpg" style="display:none" onchange="previewLogo(event)"><label for="logoUpload" class="file-input-label">📸 Selecionar Logo</label><button type="button" class="btn btn-secondary" onclick="removerLogo()" style="padding:8px 20px;">🗑️ Remover</button></div>
                     </div>
-                    <button type="submit" class="btn btn-primary">💾 Salvar Perfil e Ir para o Início</button>
+                    <button type="submit" class="btn btn-primary">💾 Salvar Perfil</button>
                 </form>
             </div>
 
@@ -449,7 +472,7 @@
             <div id="listaClientes" class="content"><h2>👥 Lista de Clientes</h2><div id="clientesList"></div></div>
             
             <div id="listaEventos" class="content">
-                <h2>🎪 Lista de Eventos Infantis</h2>
+                <h2>🎪 Lista de Eventos</h2>
                 <div class="form-group"><label>Filtrar por Status:</label>
                     <select id="filtroStatus" onchange="filtrarEventos()" style="max-width: 200px;">
                         <option value="todos">📋 Todos</option>
@@ -466,7 +489,11 @@
             <div id="contrato" class="content"><h2>📄 Gerar Contrato</h2><div class="form-group"><label>Selecione o Evento</label><select id="selectEventoContrato" onchange="carregarDadosContrato()"><option value="">Selecione</option></select></div><div id="contratoPreview"></div></div>
             <div id="estatisticas" class="content"><h2>📊 Estatísticas</h2><div id="estatisticasContent"></div></div>
             <div id="manutencao" class="content"><h2>🔧 Manutenção</h2><div class="maintenance-actions"><div class="maintenance-card"><h3>🗑️ Limpar Dados</h3><button class="btn btn-danger" onclick="confirmarLimparDados()">Limpar Todos</button></div><div class="maintenance-card"><h3>💾 Backup</h3><button class="btn btn-info" onclick="fazerBackup()">Baixar Backup</button></div><div class="maintenance-card"><h3>🔄 Restaurar</h3><div class="file-input"><input type="file" id="restoreFile" accept=".json"></div><button class="btn btn-warning" onclick="restaurarBackup()">Restaurar</button></div><div class="maintenance-card"><h3>🔐 Alterar Senha</h3><button class="btn btn-primary" onclick="alterarSenha()">Alterar Senha</button></div></div></div>
-            <div class="footer"><p>🎨 Animador(a) Infantil - Alegria garantida! 🎈</p><p id="footerContato">📞 WhatsApp: (71) 98290-5513</p></div>
+            <div class="footer">
+                <p>🎉 <strong>Faça a sua Festa</strong> - Sistema de Agendamento e Gerador de Contratos</p>
+                <p id="footerContato">📞 WhatsApp: (71) 98290-5513</p>
+                <p style="font-size:10px; color:#aaa; margin-top:5px;">© 2024 - Todos os direitos reservados</p>
+            </div>
         </div>
     </div>
 
@@ -490,7 +517,6 @@
         const STORAGE_LOGO_KEY = "animadorLogo";
         const TRIAL_DAYS = 3650;
 
-        // Catálogo de Serviços
         const CATALOGO_SERVICOS = [
             { id: 'animacao', icone: '🎈', nome: 'Animação Infantil', desc: 'Brincadeiras, músicas e muita diversão' },
             { id: 'pintura', icone: '🎨', nome: 'Oficina de Pintura', desc: 'Pintura facial e artesanato' },
@@ -514,7 +540,6 @@
         let perfilAnimador = { nomeArtistico: "", whatsapp: "", email: "", cidade: "", estado: "", instagram: "" };
         let timerInterval = null;
 
-        // Funções GPS
         function abrirGPS(endereco, cidade, estado) {
             const enderecoCompleto = `${endereco}, ${cidade} - ${estado}, Brasil`;
             const urlGoogle = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(enderecoCompleto)}&travelmode=driving`;
@@ -605,9 +630,9 @@
         function carregarPerfil() { const saved = localStorage.getItem(STORAGE_PERFIL_KEY); if (saved) perfilAnimador = JSON.parse(saved); else perfilAnimador = { nomeArtistico: "", whatsapp: "", email: "", cidade: "", estado: "", instagram: "" }; atualizarInterfacePerfil(); }
         function salvarPerfil() { localStorage.setItem(STORAGE_PERFIL_KEY, JSON.stringify(perfilAnimador)); atualizarInterfacePerfil(); }
         function atualizarInterfacePerfil() {
-            document.getElementById('nomeArtisticoDisplay').innerHTML = perfilAnimador.nomeArtistico ? `🎨 ${perfilAnimador.nomeArtistico} 🎨` : "🎨 ANIMADOR(A) INFANTIL 🎨";
+            document.getElementById('nomeArtisticoDisplay').innerHTML = perfilAnimador.nomeArtistico ? `⭐ ${perfilAnimador.nomeArtistico}` : '';
             document.getElementById('perfilInfo').innerHTML = perfilAnimador.nomeArtistico ? `<span>⭐ ${perfilAnimador.nomeArtistico}</span><span>📞 ${perfilAnimador.whatsapp}</span><span>📧 ${perfilAnimador.email}</span><span>📍 ${perfilAnimador.cidade}/${perfilAnimador.estado}</span>` : '<span>⭐ Complete seu perfil! ⭐</span>';
-            document.getElementById('footerContato').innerHTML = `📞 WhatsApp: ${perfilAnimador.whatsapp || '(71) 98290-5513'} | 📧 ${perfilAnimador.email || 'animador@infantil.com'}`;
+            document.getElementById('footerContato').innerHTML = `📞 WhatsApp: ${perfilAnimador.whatsapp || '(71) 98290-5513'} | 📧 ${perfilAnimador.email || 'contato@facasualesta.com'}`;
             document.getElementById('nomeArtistico').value = perfilAnimador.nomeArtistico || '';
             document.getElementById('whatsappPerfil').value = perfilAnimador.whatsapp || '';
             document.getElementById('emailPerfil').value = perfilAnimador.email || '';
@@ -616,13 +641,12 @@
             document.getElementById('instagramPerfil').value = perfilAnimador.instagram || '';
             const logoData = localStorage.getItem(STORAGE_LOGO_KEY);
             if (logoData) { document.getElementById('logoPreviewPerfil').innerHTML = `<img src="${logoData}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`; document.getElementById('logoDisplay').innerHTML = `<img src="${logoData}" style="width:80px; height:80px; object-fit:cover; border-radius:50%; border:3px solid #F1C40F;">`; }
-            else { document.getElementById('logoPreviewPerfil').innerHTML = '📷'; document.getElementById('logoDisplay').innerHTML = '🎨'; }
+            else { document.getElementById('logoPreviewPerfil').innerHTML = '📷'; document.getElementById('logoDisplay').innerHTML = '🎉'; }
         }
-        function salvarPerfilForm(e) { e.preventDefault(); perfilAnimador = { nomeArtistico: document.getElementById('nomeArtistico').value, whatsapp: document.getElementById('whatsappPerfil').value, email: document.getElementById('emailPerfil').value, cidade: document.getElementById('cidadePerfil').value, estado: document.getElementById('estadoPerfil').value.toUpperCase(), instagram: document.getElementById('instagramPerfil').value }; salvarPerfil(); mostrarAlerta("✅ Perfil salvo! Redirecionando...", "success"); setTimeout(() => showContent('listaEventos'), 1500); }
+        function salvarPerfilForm(e) { e.preventDefault(); perfilAnimador = { nomeArtistico: document.getElementById('nomeArtistico').value, whatsapp: document.getElementById('whatsappPerfil').value, email: document.getElementById('emailPerfil').value, cidade: document.getElementById('cidadePerfil').value, estado: document.getElementById('estadoPerfil').value.toUpperCase(), instagram: document.getElementById('instagramPerfil').value }; salvarPerfil(); mostrarAlerta("✅ Perfil salvo!", "success"); setTimeout(() => showContent('listaEventos'), 1500); }
         function previewLogo(e) { const file = e.target.files[0]; if (file && (file.type === 'image/jpeg' || file.type === 'image/jpg')) { const reader = new FileReader(); reader.onload = ev => { localStorage.setItem(STORAGE_LOGO_KEY, ev.target.result); atualizarInterfacePerfil(); mostrarAlerta("✅ Logo atualizada!", "success"); }; reader.readAsDataURL(file); } else { mostrarAlerta("❌ Formato JPEG apenas!", "error"); } }
         function removerLogo() { localStorage.removeItem(STORAGE_LOGO_KEY); atualizarInterfacePerfil(); mostrarAlerta("Logo removida!", "success"); }
 
-        // Catálogo de Serviços
         function renderizarCatalogo() {
             const container = document.getElementById('catalogoServicos');
             if (!container) return;
@@ -688,9 +712,12 @@
             }
 
             document.getElementById('contratoPreview').innerHTML = `<div class="contrato-container"><div id="contratoParaImprimir" class="contrato-paper">
-                <div style="text-align:center;">${logo?`<img src="${logo}" style="width:60px; border-radius:50%;">`:''}
-                <div style="font-size:22px; color:#FF69B4; font-weight:bold;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div>
-                <div style="font-size:14px; color:#666;">${perfilAnimador.nomeArtistico||'Animador(a) Infantil'}</div></div>
+                <div style="text-align:center;">
+                    ${logo?`<img src="${logo}" style="width:60px; border-radius:50%;">`:''}
+                    <div style="font-size:28px; color:#FF69B4; font-weight:bold;">🎉 Faça a sua Festa</div>
+                    <div style="font-size:16px; color:#9B59B6;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div>
+                    <div style="font-size:14px; color:#666;">${perfilAnimador.nomeArtistico||'Animador(a) Infantil'}</div>
+                </div>
                 
                 <div class="payment-note">📋 SERVIÇOS CONTRATADOS</div>
                 <div style="margin: 10px 0;">${servicosLista}</div>

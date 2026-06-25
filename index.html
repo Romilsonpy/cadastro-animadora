@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça a sua Festa - Sistema de Agendamento</title>
+    <title>faça a festa - Sistema de Agendamento</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -284,14 +284,6 @@
         .servico-catalogo-card .nome { font-weight: bold; margin: 5px 0; }
         .servico-catalogo-card .desc { font-size: 11px; color: #888; }
 
-        .app-name-header {
-            font-size: 12px;
-            color: rgba(255,255,255,0.7);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 5px;
-        }
-
         @media (max-width: 768px) {
             .menu-buttons { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
@@ -311,7 +303,7 @@
     <div id="firstAccessOverlay" class="first-access-overlay">
         <div class="first-access-box">
             <div class="logo-icon">🎉🎈</div>
-            <h2>🎉 Bem-vindo ao <span style="color:#FFD700;">Faça a sua Festa</span>! 🎉</h2>
+            <h2>🎉 Bem-vindo ao <span style="color:#FFD700;">faça a festa</span>! 🎉</h2>
             <p>Primeiro acesso - Cadastre seu usuário e senha</p>
             <input type="text" id="newUsername" class="first-input" placeholder="Nome de usuário">
             <input type="password" id="newPassword" class="first-input" placeholder="Senha">
@@ -326,7 +318,7 @@
     <div id="loginOverlay" class="login-overlay">
         <div class="login-box">
             <div class="logo-icon">🎭🎪</div>
-            <h2 style="color: var(--primary-purple);">🎉 Faça a sua Festa</h2>
+            <h2 style="color: var(--primary-purple);">🎉 faça a festa</h2>
             <p>Sistema de Agendamento e Gerador de Contratos</p>
             <div style="margin: 10px 0;">
                 <span class="trial-badge">🎉 TESTE GRÁTIS</span>
@@ -348,11 +340,11 @@
             <div class="planos-container">
                 <div class="plano-card">
                     <div class="plano-info"><div class="plano-nome">📅 Plano Mensal</div><div class="plano-preco">R$ 10,00</div><div class="plano-duracao">30 dias de acesso</div></div>
-                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Sistema%20Faça%20a%20sua%20Festa%20no%20valor%20de%20R$%2010,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
+                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20MENSAL%20do%20Sistema%20faça%20a%20festa%20no%20valor%20de%20R$%2010,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
                 </div>
                 <div class="plano-card">
                     <div class="plano-info"><div class="plano-nome">🏆 Plano Anual</div><div class="plano-preco">R$ 50,00</div><div class="plano-duracao">365 dias de acesso (economize R$ 70)</div></div>
-                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Sistema%20Faça%20a%20sua%20Festa%20no%20valor%20de%20R$%2050,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
+                    <a href="https://wa.me/5571982905513?text=Olá!%20Gostaria%20de%20contratar%20o%20PLANO%20ANUAL%20do%20Sistema%20faça%20a%20festa%20no%20valor%20de%20R$%2050,00." target="_blank" class="btn-whatsapp-plano">💬 Desejo contratar</a>
                 </div>
             </div>
             <p style="margin-top: 15px; font-size: 12px;">🔐 Após o pagamento, você receberá sua chave de ativação via WhatsApp.</p>
@@ -373,7 +365,7 @@
                 <div class="logo-container">
                     <div id="logoDisplay" class="logo-placeholder">🎉</div>
                     <div class="logo-text">
-                        <h1>🎉 Faça a sua Festa</h1>
+                        <h1>🎉 faça a festa</h1>
                         <div class="subtitle">📋 Sistema de Agendamento e Contratos</div>
                         <div id="nomeArtisticoDisplay" style="font-size:16px; -webkit-text-fill-color: #FFD700; margin-top:5px;"></div>
                     </div>
@@ -490,7 +482,7 @@
             <div id="estatisticas" class="content"><h2>📊 Estatísticas</h2><div id="estatisticasContent"></div></div>
             <div id="manutencao" class="content"><h2>🔧 Manutenção</h2><div class="maintenance-actions"><div class="maintenance-card"><h3>🗑️ Limpar Dados</h3><button class="btn btn-danger" onclick="confirmarLimparDados()">Limpar Todos</button></div><div class="maintenance-card"><h3>💾 Backup</h3><button class="btn btn-info" onclick="fazerBackup()">Baixar Backup</button></div><div class="maintenance-card"><h3>🔄 Restaurar</h3><div class="file-input"><input type="file" id="restoreFile" accept=".json"></div><button class="btn btn-warning" onclick="restaurarBackup()">Restaurar</button></div><div class="maintenance-card"><h3>🔐 Alterar Senha</h3><button class="btn btn-primary" onclick="alterarSenha()">Alterar Senha</button></div></div></div>
             <div class="footer">
-                <p>🎉 <strong>Faça a sua Festa</strong> - Sistema de Agendamento e Gerador de Contratos</p>
+                <p>🎉 <strong>faça a festa</strong> - Sistema de Agendamento e Gerador de Contratos</p>
                 <p id="footerContato">📞 WhatsApp: (71) 98290-5513</p>
                 <p style="font-size:10px; color:#aaa; margin-top:5px;">© 2024 - Todos os direitos reservados</p>
             </div>
@@ -509,6 +501,7 @@
         // CHAVES DE LICENÇA
         const LICENCA_MENSAL_KEY = "ANIM-MENSAL-2024-X7K9";
         const LICENCA_ANUAL_KEY = "ANIM-ANUAL-2024-Y5L2";
+        const LICENCA_FAÇA_FESTA = "78233429520"; // Chave de licença para "faça a festa"
         
         const STORAGE_CREDENTIALS_KEY = "animadorCredentials";
         const STORAGE_LICENSE_KEY = "animadorLicense";
@@ -573,17 +566,18 @@
             
             if (chave === LICENCA_MENSAL_KEY) { chaveCorreta = LICENCA_MENSAL_KEY; dias = 30; nome = "MENSAL"; }
             else if (chave === LICENCA_ANUAL_KEY) { chaveCorreta = LICENCA_ANUAL_KEY; dias = 365; nome = "ANUAL"; }
+            else if (chave === LICENCA_FAÇA_FESTA) { chaveCorreta = LICENCA_FAÇA_FESTA; dias = 365; nome = "FAÇA FESTA"; }
             
             if (chave === chaveCorreta) { 
                 localStorage.setItem(STORAGE_LICENSE_KEY, JSON.stringify({ tipo: nome, dataExpiracao: new Date().getTime() + (dias * 24 * 60 * 60 * 1000) })); 
                 localStorage.removeItem(STORAGE_TRIAL_KEY); 
-                mostrarAlerta(`✅ Licença ${nome} ativada!`, "success"); 
+                mostrarAlerta(`✅ Licença ${nome} ativada com sucesso!`, "success"); 
                 document.getElementById('licenseOverlay').style.display = 'none'; 
                 document.getElementById('loginOverlay').style.display = 'flex'; 
                 document.getElementById('licenseKeyInput').value = ''; 
                 atualizarTimer(); 
             } else { 
-                mostrarAlerta("❌ Chave inválida!", "error"); 
+                mostrarAlerta("❌ Chave inválida! Verifique e tente novamente.", "error"); 
             }
         }
 
@@ -632,7 +626,7 @@
         function atualizarInterfacePerfil() {
             document.getElementById('nomeArtisticoDisplay').innerHTML = perfilAnimador.nomeArtistico ? `⭐ ${perfilAnimador.nomeArtistico}` : '';
             document.getElementById('perfilInfo').innerHTML = perfilAnimador.nomeArtistico ? `<span>⭐ ${perfilAnimador.nomeArtistico}</span><span>📞 ${perfilAnimador.whatsapp}</span><span>📧 ${perfilAnimador.email}</span><span>📍 ${perfilAnimador.cidade}/${perfilAnimador.estado}</span>` : '<span>⭐ Complete seu perfil! ⭐</span>';
-            document.getElementById('footerContato').innerHTML = `📞 WhatsApp: ${perfilAnimador.whatsapp || '(71) 98290-5513'} | 📧 ${perfilAnimador.email || 'contato@facasualesta.com'}`;
+            document.getElementById('footerContato').innerHTML = `📞 WhatsApp: ${perfilAnimador.whatsapp || '(71) 98290-5513'} | 📧 ${perfilAnimador.email || 'contato@facafesta.com'}`;
             document.getElementById('nomeArtistico').value = perfilAnimador.nomeArtistico || '';
             document.getElementById('whatsappPerfil').value = perfilAnimador.whatsapp || '';
             document.getElementById('emailPerfil').value = perfilAnimador.email || '';
@@ -714,7 +708,7 @@
             document.getElementById('contratoPreview').innerHTML = `<div class="contrato-container"><div id="contratoParaImprimir" class="contrato-paper">
                 <div style="text-align:center;">
                     ${logo?`<img src="${logo}" style="width:60px; border-radius:50%;">`:''}
-                    <div style="font-size:28px; color:#FF69B4; font-weight:bold;">🎉 Faça a sua Festa</div>
+                    <div style="font-size:28px; color:#FF69B4; font-weight:bold;">🎉 faça a festa</div>
                     <div style="font-size:16px; color:#9B59B6;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS</div>
                     <div style="font-size:14px; color:#666;">${perfilAnimador.nomeArtistico||'Animador(a) Infantil'}</div>
                 </div>
